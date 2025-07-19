@@ -4,6 +4,7 @@ import TrustRewardSection from '@/components/sections/trust-reward';
 import EffortDistributionSection from '@/components/sections/effort-distribution';
 import FailureRateSection from '@/components/sections/failure-rate';
 import StressLevelSection from '@/components/sections/stress-level';
+import WhitePaperSection from '@/components/sections/white-paper';
 import TerminologyExplainer from '@/components/sections/terminology-explainer';
 import RiskMitigation from '@/components/sections/risk-mitigation';
 import NewPlayersSection from '@/components/sections/new-players';
@@ -22,6 +23,7 @@ export default function Home() {
           <FailureRateSection />
           <StressLevelSection />
         </div>
+        <WhitePaperSection />
         <TerminologyExplainer />
         <RiskMitigation />
         <NewPlayersSection />
