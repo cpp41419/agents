@@ -7,6 +7,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import { Rocket, FileText } from "lucide-react";
+
 
 const ArticleSection = ({ title, children }: { title: string, children: React.ReactNode }) => (
     <div className="space-y-4">
@@ -345,15 +347,21 @@ export default function WhitePaperSection() {
                         </ArticleSection>
 
 
-                        <div className="text-center space-y-4 pt-8 border-t border-gray-200">
-                            <h3 className="text-2xl font-bold text-primary">Action: Become the Change</h3>
-                            <p className="text-gray-600">Ready to change real estate from the inside?</p>
-                            <p>At <strong>CPP41419.com.au</strong>, we don't train traditional agents. We develop property professionals for the post-disruption era.</p>
-                            <div className="flex justify-center gap-4">
-                                <Button size="lg">Start Your Revolution</Button>
-                                <Button size="lg" variant="secondary">Read More Analysis</Button>
-                            </div>
-                            <p className="text-sm text-gray-500 pt-4">Because the best way to beat a broken system is to rebuild it with better people.</p>
+                        <div className="bg-secondary rounded-xl p-8 mt-12 text-center text-secondary-foreground shadow-lg">
+                          <h3 className="text-3xl font-extrabold tracking-tight text-primary">Action: Become the Change</h3>
+                          <p className="mt-4 text-lg text-muted-foreground">Ready to change real estate from the inside?</p>
+                          <p className="mt-2 max-w-2xl mx-auto">At <strong className="text-primary-foreground">CPP41419.com.au</strong>, we don't train traditional agents. We develop property professionals for the post-disruption era.</p>
+                          <div className="mt-8 flex justify-center gap-4">
+                            <Button size="lg">
+                              <Rocket className="mr-2 h-5 w-5" />
+                              Start Your Revolution
+                            </Button>
+                            <Button size="lg" variant="outline" className="bg-secondary hover:bg-muted">
+                              <FileText className="mr-2 h-5 w-5" />
+                              Read More Analysis
+                            </Button>
+                          </div>
+                           <p className="mt-6 text-sm text-muted-foreground">Because the best way to beat a broken system is to rebuild it with better people.</p>
                         </div>
                     </div>
                 </article>
