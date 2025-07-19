@@ -16,31 +16,31 @@ const ArticleStat = ({ value, label }: { value: string, label: string }) => (
 
 export default function WhitePaperSection() {
     return (
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 text-black">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-white text-black">
             <div className="container px-4 md:px-6">
                 <article className="prose prose-invert mx-auto max-w-4xl space-y-12">
-                    <header className="text-center space-y-4 border-b border-border pb-8">
-                        <p className="text-sm font-code tracking-widest uppercase text-muted-foreground">The Real Estate Truth Tribune</p>
-                        <div className="flex justify-center space-x-4 text-xs text-muted-foreground font-code">
+                    <header className="text-center space-y-4 border-b border-gray-200 pb-8">
+                        <p className="text-sm font-mono tracking-widest uppercase text-gray-500">The Real Estate Truth Tribune</p>
+                        <div className="flex justify-center space-x-4 text-xs text-gray-500 font-mono">
                             <span>Vol. MMXXIV, No. 1</span>
                             <span>December 2024</span>
                             <span>Truth: Priceless</span>
                         </div>
                         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary">Why Everyone Hates Real Estate Agents: The Beautiful Contradiction of Australian Property</h1>
-                        <h2 className="text-xl font-medium text-muted-foreground">Opinion: The Parasitic Class We Created and Why We Can't Kill It</h2>
+                        <h2 className="text-xl font-medium text-gray-600">Opinion: The Parasitic Class We Created and Why We Can't Kill It</h2>
                         <p className="max-w-3xl mx-auto text-black/80">
                             An evidence-based deconstruction revealing the enigma of consumer resentment versus market necessity — from justified contempt to systemic dependence.
                         </p>
-                        <p className="text-sm">By <span className="font-semibold">Simon Dodson</span><br /><span className="text-xs text-muted-foreground">Digital Transformation Specialist & Founder, CPP41419.com.au</span></p>
+                        <p className="text-sm">By <span className="font-semibold">Simon Dodson</span><br /><span className="text-xs text-gray-500">Digital Transformation Specialist & Founder, CPP41419.com.au</span></p>
                     </header>
 
                     <div className="space-y-8">
-                        <div className="p-6 rounded-lg border bg-white shadow-md">
-                            <h3 className="text-xl font-bold">Executive Summary: The $8.4 Billion Question</h3>
-                            <p className="mt-2 text-muted-foreground">
+                        <div className="p-6 rounded-lg border border-gray-200 bg-gray-50">
+                            <h3 className="text-xl font-bold text-gray-800">Executive Summary: The $8.4 Billion Question</h3>
+                            <p className="mt-2 text-gray-600">
                                 Australian real estate agents extract <strong>$8.4 billion annually</strong> from property transactions while providing services that technology rendered obsolete a decade ago. This investigation reveals how a profession built on information scarcity survives in an age of information abundance — and why their extinction might hurt more than their existence.
                             </p>
-                            <h4 className="font-semibold mt-4 mb-2">Key Findings:</h4>
+                            <h4 className="font-semibold text-gray-800 mt-4 mb-2">Key Findings:</h4>
                             <ul className="space-y-2 list-none p-0">
                                 <ArticleStat value="73%" label="of homebuyers question agent value propositions" />
                                 <ArticleStat value="67%" label="find properties before contacting agents" />
@@ -78,15 +78,15 @@ export default function WhitePaperSection() {
                             <p>The traditional real estate industry has <strong>two years left. Maximum.</strong> The question isn't whether you'll be part of its transformation — it's whether you'll lead it or be roadkill.</p>
                         </ArticleSection>
 
-                        <div className="text-center space-y-4 pt-8 border-t border-border">
+                        <div className="text-center space-y-4 pt-8 border-t border-gray-200">
                             <h3 className="text-2xl font-bold text-primary">Action: Become the Change</h3>
-                            <p className="text-muted-foreground">Ready to change real estate from the inside?</p>
+                            <p className="text-gray-600">Ready to change real estate from the inside?</p>
                             <p>At <strong>CPP41419.com.au</strong>, we don't train traditional agents. We develop property professionals for the post-disruption era.</p>
                             <div className="flex justify-center gap-4">
                                 <Button size="lg">Start Your Revolution</Button>
                                 <Button size="lg" variant="secondary">Read More Analysis</Button>
                             </div>
-                            <p className="text-sm text-muted-foreground pt-4">Because the best way to beat a broken system is to rebuild it with better people.</p>
+                            <p className="text-sm text-gray-500 pt-4">Because the best way to beat a broken system is to rebuild it with better people.</p>
                         </div>
                     </div>
                 </article>
