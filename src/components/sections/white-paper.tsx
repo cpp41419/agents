@@ -3,20 +3,20 @@ import { Button } from "@/components/ui/button";
 const ArticleSection = ({ title, children }: { title: string, children: React.ReactNode }) => (
     <div className="space-y-4">
         <h3 className="text-2xl font-bold tracking-tight text-primary">{title}</h3>
-        <div className="space-y-4 text-foreground/80">{children}</div>
+        <div className="space-y-4 text-black/80">{children}</div>
     </div>
 );
 
 const ArticleStat = ({ value, label }: { value: string, label: string }) => (
     <li className="flex items-baseline space-x-2">
         <span className="text-2xl font-bold text-accent">{value}</span>
-        <span>{label}</span>
+        <span className="text-black">{label}</span>
     </li>
 );
 
 export default function WhitePaperSection() {
     return (
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 text-black">
             <div className="container px-4 md:px-6">
                 <article className="prose prose-invert mx-auto max-w-4xl space-y-12">
                     <header className="text-center space-y-4 border-b border-border pb-8">
@@ -28,14 +28,14 @@ export default function WhitePaperSection() {
                         </div>
                         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary">Why Everyone Hates Real Estate Agents: The Beautiful Contradiction of Australian Property</h1>
                         <h2 className="text-xl font-medium text-muted-foreground">Opinion: The Parasitic Class We Created and Why We Can't Kill It</h2>
-                        <p className="max-w-3xl mx-auto text-foreground/80">
+                        <p className="max-w-3xl mx-auto text-black/80">
                             An evidence-based deconstruction revealing the enigma of consumer resentment versus market necessity — from justified contempt to systemic dependence.
                         </p>
                         <p className="text-sm">By <span className="font-semibold">Simon Dodson</span><br /><span className="text-xs text-muted-foreground">Digital Transformation Specialist & Founder, CPP41419.com.au</span></p>
                     </header>
 
                     <div className="space-y-8">
-                        <div className="p-6 rounded-lg border bg-secondary">
+                        <div className="p-6 rounded-lg border bg-white shadow-md">
                             <h3 className="text-xl font-bold">Executive Summary: The $8.4 Billion Question</h3>
                             <p className="mt-2 text-muted-foreground">
                                 Australian real estate agents extract <strong>$8.4 billion annually</strong> from property transactions while providing services that technology rendered obsolete a decade ago. This investigation reveals how a profession built on information scarcity survives in an age of information abundance — and why their extinction might hurt more than their existence.
