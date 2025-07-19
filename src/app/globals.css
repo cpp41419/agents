@@ -6,41 +6,41 @@
   :root {
     --background: 240 33% 14%; /* #1A1A2E */
     --foreground: 0 0% 98%;
-    
+
     --card: 240 33% 17%;
     --card-foreground: 0 0% 98%;
-    
+
     --popover: 240 33% 14%;
     --popover-foreground: 0 0% 98%;
-    
+
     --primary: 200 100% 35.7%; /* #0077B6 */
     --primary-foreground: 0 0% 98%;
-    
+
     --secondary: 240 33% 20%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 240 33% 25%;
     --muted-foreground: 0 0% 63.9%;
-    
+
     --accent: 350 79% 59%; /* #E94560 */
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    
+
     --border: 240 33% 25%;
     --input: 240 33% 25%;
     --ring: 200 100% 45.7%;
-    
+
     --radius: 0.5rem;
-    
+
     --chart-1: 200 100% 35.7%;
     --chart-2: 350 79% 59%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
   }
- 
+
   .dark {
     --background: 240 33% 14%;
     --foreground: 0 0% 98%;
@@ -68,12 +68,21 @@
     --chart-5: 27 87% 67%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+  }
+  .prose-invert {
+    color: #18192a; /* Softer black for body text on white */
+  }
+  .prose-invert h1, .prose-invert h2, .prose-invert h3, .prose-invert h4, .prose-invert h5, .prose-invert h6 {
+    color: #18192a;
+  }
+  .prose-invert strong {
+    color: #18192a;
   }
 }

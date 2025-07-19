@@ -20,13 +20,13 @@ export default function Home() {
         <HeroSection />
         <TrustRewardSection />
         <EffortDistributionSection />
-        <div className="container grid md:grid-cols-2 gap-8 py-16 lg:py-24">
-          <FailureRateSection />
-          <StressLevelSection />
+        <div className="bg-white py-16 lg:py-24">
+          <div className="container grid md:grid-cols-2 gap-8">
+            <FailureRateSection />
+            <StressLevelSection />
+          </div>
         </div>
-        <Separator className="my-8 md:my-16 bg-border/20" />
         <WhitePaperSection />
-        <Separator className="my-8 md:my-16 bg-border/20" />
         <TerminologyExplainer />
         <RiskMitigation />
         <NewPlayersSection />

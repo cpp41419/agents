@@ -47,17 +47,17 @@ export default function RiskMitigation() {
   }
 
   return (
-    <section className="w-full py-16 md:py-24 lg:py-32 bg-background">
+    <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary">
       <div className="container px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center space-y-4">
-            <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">AI-Powered Risk Analysis</div>
-            <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl text-foreground">How an Agent Solves Your Problems</h2>
+            <p className="font-semibold text-primary uppercase tracking-wider">AI-Powered Risk Analysis</p>
+            <h2 className="text-4xl font-black tracking-tighter sm:text-5xl text-primary-foreground">How an Agent Solves Your Problems</h2>
             <p className="text-muted-foreground text-lg md:text-xl/relaxed">
               What are your biggest fears about buying or selling a home? Tell our AI, and it will explain exactly how a qualified real estate agent can mitigate those specific risks.
             </p>
         </div>
 
-        <Card className="max-w-2xl mx-auto mt-12 shadow-lg border-border/60">
+        <Card className="max-w-2xl mx-auto mt-12 shadow-lg border-border/60 bg-card/80">
             <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-2xl"><ShieldQuestion className="text-primary h-7 w-7"/> Risk Mitigation Tool</CardTitle>
                 <CardDescription>Tell us your concerns, we'll provide the solutions.</CardDescription>
@@ -86,7 +86,7 @@ export default function RiskMitigation() {
                 </Form>
 
                 {solution && (
-                    <div className="mt-8 p-6 border rounded-lg bg-secondary/30">
+                    <div className="mt-8 p-6 border rounded-lg bg-background">
                         <h3 className="font-bold text-xl text-primary flex items-center gap-2"><Sparkles className="h-5 w-5" /> An Agent's Solution</h3>
                         <p className="mt-4 text-foreground/90 whitespace-pre-wrap text-base leading-relaxed">{solution.agentSolutions}</p>
                     </div>

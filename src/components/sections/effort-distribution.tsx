@@ -26,45 +26,64 @@ const chartConfig = {
 
 export default function EffortDistributionSection() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+    <section className="w-full py-16 md:py-24 lg:py-32 bg-white text-gray-800">
       <div className="container px-4 md:px-6">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
           <div className="flex items-center justify-center lg:order-2">
-            <Card className="w-full max-w-lg border-border/60 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-2xl">Effort Distribution</CardTitle>
-                <CardDescription>Who really does the work in a transaction?</CardDescription>
-              </CardHeader>
-              <CardContent className="flex justify-center">
-                 <ChartContainer
-                    config={chartConfig}
-                    className="mx-auto aspect-square max-h-[300px]"
+             <ChartContainer
+                config={chartConfig}
+                className="mx-auto aspect-square max-h-[350px]"
+              >
+                <PieChart>
+                  <ChartTooltip
+                    cursor={false}
+                    content={<ChartTooltipContent hideLabel />}
+                  />
+                  <Pie
+                    data={chartData}
+                    dataKey="effort"
+                    nameKey="party"
+                    innerRadius={80}
+                    strokeWidth={5}
+                    labelLine={false}
+                    label={({
+                      cx,
+                      cy,
+                      midAngle,
+                      innerRadius,
+                      outerRadius,
+                      percent,
+                      index,
+                    }) => {
+                      const RADIAN = Math.PI / 180
+                      const radius = innerRadius + (outerRadius - innerRadius) * 0.5
+                      const x = cx + radius * Math.cos(-midAngle * RADIAN)
+                      const y = cy + radius * Math.sin(-midAngle * RADIAN)
+                      return (
+                        <text
+                          x={x}
+                          y={y}
+                          fill={index === 0 ? "hsl(var(--accent-foreground))" : "hsl(var(--primary-foreground))"}
+                          textAnchor={x > cx ? "start" : "end"}
+                          dominantBaseline="central"
+                          className="text-lg font-bold"
+                        >
+                          {`${(percent * 100).toFixed(0)}%`}
+                        </text>
+                      )
+                    }}
                   >
-                    <PieChart>
-                      <ChartTooltip
-                        cursor={false}
-                        content={<ChartTooltipContent hideLabel />}
-                      />
-                      <Pie
-                        data={chartData}
-                        dataKey="effort"
-                        nameKey="party"
-                        innerRadius={60}
-                        strokeWidth={5}
-                      >
-                         {chartData.map((entry) => (
-                          <Cell key={`cell-${entry.party}`} fill={entry.fill} />
-                        ))}
-                      </Pie>
-                    </PieChart>
-                  </ChartContainer>
-              </CardContent>
-            </Card>
+                     {chartData.map((entry) => (
+                      <Cell key={`cell-${entry.party}`} fill={entry.fill} className="focus:outline-none ring-0" />
+                    ))}
+                  </Pie>
+                </PieChart>
+              </ChartContainer>
           </div>
           <div className="space-y-4 lg:order-1">
-            <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">The 80/20 Problem</div>
-            <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-foreground">Uneven Workload, Full Commission</h2>
-            <p className="max-w-[600px] text-muted-foreground text-lg md:text-xl/relaxed">
+            <p className="font-semibold text-primary uppercase tracking-wider">The 80/20 Problem</p>
+            <h2 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-5xl text-gray-900">Uneven Workload, Full Commission.</h2>
+            <p className="max-w-[600px] text-gray-600 text-lg md:text-xl/relaxed">
               With modern tools, homebuyers and sellers handle the majority of the legwork—from property searches to initial viewings. Yet, the traditional commission structure hasn't changed, leaving many to question the value they're receiving.
             </p>
           </div>
