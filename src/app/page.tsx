@@ -9,6 +9,7 @@ import TerminologyExplainer from '@/components/sections/terminology-explainer';
 import RiskMitigation from '@/components/sections/risk-mitigation';
 import NewPlayersSection from '@/components/sections/new-players';
 import CtaSection from '@/components/sections/cta';
+import { Separator } from '@/components/ui/separator';
 import Footer from '@/components/layout/footer';
 
 export default function Home() {
@@ -23,7 +24,9 @@ export default function Home() {
           <FailureRateSection />
           <StressLevelSection />
         </div>
+        <Separator className="my-8 md:my-16 bg-border/20" />
         <WhitePaperSection />
+        <Separator className="my-8 md:my-16 bg-border/20" />
         <TerminologyExplainer />
         <RiskMitigation />
         <NewPlayersSection />

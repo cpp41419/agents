@@ -28,18 +28,18 @@ export default function TrustRewardSection() {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
       <div className="container px-4 md:px-6">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
           <div className="space-y-4">
-            <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Trust vs. Reward</div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">The Great Disparity</h2>
-            <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">Trust vs. Reward</div>
+            <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary-foreground">The Great Disparity</h2>
+            <p className="max-w-[600px] text-muted-foreground text-lg md:text-xl/relaxed">
               Public perception of real estate agents is at an all-time low, yet their income potential remains remarkably high. This chart visualizes the stark contrast between the low trust placed in agents and the high financial rewards they can reap.
             </p>
           </div>
           <div className="flex items-center justify-center">
-            <Card className="w-full max-w-lg">
+            <Card className="w-full max-w-lg border-border/60 shadow-lg">
               <CardHeader>
-                <CardTitle>Trust vs. Reward</CardTitle>
+                <CardTitle className="text-2xl">Trust vs. Reward</CardTitle>
                 <CardDescription>Public trust percentage vs. Median Agent Income (2023)</CardDescription>
               </CardHeader>
               <CardContent>

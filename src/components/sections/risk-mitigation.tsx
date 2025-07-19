@@ -47,52 +47,52 @@ export default function RiskMitigation() {
   }
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+    <section className="w-full py-16 md:py-24 lg:py-32 bg-background">
       <div className="container px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center space-y-4">
-            <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">AI-Powered Risk Analysis</div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">How an Agent Solves Your Problems</h2>
-            <p className="text-muted-foreground md:text-xl/relaxed">
+            <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">AI-Powered Risk Analysis</div>
+            <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl text-foreground">How an Agent Solves Your Problems</h2>
+            <p className="text-muted-foreground text-lg md:text-xl/relaxed">
               What are your biggest fears about buying or selling a home? Tell our AI, and it will explain exactly how a qualified real estate agent can mitigate those specific risks.
             </p>
         </div>
 
-        <Card className="max-w-2xl mx-auto mt-10">
+        <Card className="max-w-2xl mx-auto mt-12 shadow-lg border-border/60">
             <CardHeader>
-                <CardTitle className="flex items-center gap-2"><ShieldQuestion className="text-primary"/> Risk Mitigation Tool</CardTitle>
+                <CardTitle className="flex items-center gap-3 text-2xl"><ShieldQuestion className="text-primary h-7 w-7"/> Risk Mitigation Tool</CardTitle>
                 <CardDescription>Tell us your concerns, we'll provide the solutions.</CardDescription>
             </CardHeader>
             <CardContent>
                  <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                         <FormField
                         control={form.control}
                         name="perceivedRisks"
                         render={({ field }) => (
                             <FormItem>
-                            <FormLabel>Your Perceived Risks</FormLabel>
+                            <FormLabel className="text-base">Your Perceived Risks</FormLabel>
                             <FormControl>
-                                <Textarea rows={4} placeholder="e.g., 'I'm worried about overpaying for a house in this market, and I don't know how to handle negotiations.'" {...field} />
+                                <Textarea rows={4} className="text-base" placeholder="e.g., 'I'm worried about overpaying for a house in this market, and I don't know how to handle negotiations.'" {...field} />
                             </FormControl>
                             <FormMessage />
                             </FormItem>
                         )}
                         />
-                        <Button type="submit" disabled={isLoading}>
-                             {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Sparkles className="mr-2 h-4 w-4" />}
+                        <Button type="submit" disabled={isLoading} size="lg">
+                             {isLoading ? <Loader2 className="mr-2 h-5 w-5 animate-spin" /> : <Sparkles className="mr-2 h-5 w-5" />}
                             Mitigate My Risks
                         </Button>
                     </form>
                 </Form>
 
                 {solution && (
-                    <div className="mt-6 p-4 border rounded-lg bg-background">
-                        <h3 className="font-bold text-lg text-primary">An Agent's Solution</h3>
-                        <p className="mt-2 text-foreground/90 whitespace-pre-wrap">{solution.agentSolutions}</p>
+                    <div className="mt-8 p-6 border rounded-lg bg-secondary/30">
+                        <h3 className="font-bold text-xl text-primary flex items-center gap-2"><Sparkles className="h-5 w-5" /> An Agent's Solution</h3>
+                        <p className="mt-4 text-foreground/90 whitespace-pre-wrap text-base leading-relaxed">{solution.agentSolutions}</p>
                     </div>
                 )}
                  {error && (
-                    <div className="mt-6 p-4 border rounded-lg bg-destructive/10 text-destructive">
+                    <div className="mt-8 p-4 border rounded-lg bg-destructive/10 text-destructive">
                         <p>{error}</p>
                     </div>
                 )}
