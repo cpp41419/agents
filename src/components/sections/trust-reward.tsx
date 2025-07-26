@@ -1,10 +1,12 @@
 
 "use client"
 
-import { Scatter, ScatterChart, CartesianGrid, Tooltip, XAxis, YAxis, ZAxis, Legend } from "recharts"
+import { Scatter, ScatterChart, CartesianGrid, Tooltip, XAxis, YAxis, ZAxis, Legend, Cell } from "recharts"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChartContainer, ChartTooltipContent, ChartLegend, ChartLegendContent } from "@/components/ui/chart"
 import type { ChartConfig } from "@/components/ui/chart"
+import { useInView } from "react-intersection-observer"
+import { animated, useSpring } from "@react-spring/web"
 
 const chartData = [
     { profession: "Doctors", income: 250, trust: 87, training: 7, fill: "var(--color-doctors)" },
@@ -51,7 +53,21 @@ const chartConfig = {
   }
 } satisfies ChartConfig
 
+const AnimatedScatter = animated(Scatter);
+
 export default function TrustRewardSection() {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    });
+
+    const spring = useSpring({
+        from: { opacity: 0, transform: 'scale(0)' },
+        to: { opacity: inView ? 1 : 0, transform: inView ? 'scale(1)' : 'scale(0)' },
+        config: { mass: 1, tension: 280, friction: 60 },
+        delay: 200,
+    });
+
   return (
     <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary text-secondary-foreground">
       <div className="container px-4 md:px-6">
@@ -63,7 +79,7 @@ export default function TrustRewardSection() {
               Public perception of real estate agents is at an all-time low, yet their income potential remains remarkably high. This chart visualizes the stark contrast between professions, plotting trust against income and training time.
             </p>
           </div>
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center" ref={ref}>
             <Card className="w-full max-w-lg border-border/60 shadow-lg bg-card/80">
               <CardHeader>
                 <CardTitle className="text-2xl">Trust, Reward & Training</CardTitle>
@@ -99,9 +115,16 @@ export default function TrustRewardSection() {
                     <ZAxis dataKey="training" type="number" range={[100, 1000]} name="training" unit=" years" />
                     <Tooltip cursor={{ strokeDasharray: "3 3" }} content={<ChartTooltipContent />} />
                      <Legend content={<ChartLegendContent />} verticalAlign="bottom" height={50} />
-                    {chartData.map((point) => (
-                        <Scatter key={point.profession} name={point.profession} data={[point]} fill={point.fill} shape="circle" />
-                    ))}
+                    <AnimatedScatter
+                        data={chartData}
+                        fill="var(--color-primary)"
+                        shape="circle"
+                        style={spring}
+                    >
+                         {chartData.map((point) => (
+                            <Cell key={point.profession} fill={point.fill} />
+                        ))}
+                    </AnimatedScatter>
                   </ScatterChart>
                 </ChartContainer>
               </CardContent>
