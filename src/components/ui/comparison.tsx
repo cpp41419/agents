@@ -52,9 +52,9 @@ export function Comparison({
           {leftSublabel && <p className="text-sm text-muted-foreground">{leftSublabel}</p>}
         </div>
          <div className="text-center w-1/5 flex items-center justify-center">
-            <p className="font-black text-2xl text-primary-foreground">{leftValue}%</p>
-            <p className="font-black text-2xl text-muted-foreground mx-2">/</p>
-            <p className="font-black text-2xl text-primary-foreground">{rightValue}%</p>
+            <p className="font-black text-2xl text-primary-foreground">{leftValue > 0 ? `${leftValue}%` : ''}</p>
+             {leftValue > 0 && rightValue > 0 && <p className="font-black text-2xl text-muted-foreground mx-2">/</p>}
+            <p className="font-black text-2xl text-primary-foreground">{rightValue > 0 ? `${rightValue}%` : ''}</p>
         </div>
         <div className="text-right w-2/5">
           <p className="font-bold text-lg">{rightLabel}</p>
