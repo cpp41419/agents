@@ -7,7 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { Rocket, FileText, Forward } from "lucide-react";
+import { Rocket, FileText, Forward, TrendingUp, Search, Home, DollarSign, ArrowRight } from "lucide-react";
 
 
 const ArticleSection = ({ title, overline, children }: { title: string, overline: string, children: React.ReactNode }) => (
@@ -48,6 +48,18 @@ const PullQuote = ({children, citation}: {children: React.ReactNode, citation?: 
         {citation && <cite className="mt-2 block text-base font-normal text-primary not-italic">— {citation}</cite>}
     </blockquote>
 )
+
+const ValuePropCard = ({ icon, value, label }: { icon: React.ReactNode, value: string, label: string }) => (
+    <div className="bg-slate-50 rounded-xl p-6 shadow-sm border border-slate-200">
+        <div className="flex items-center gap-4">
+            <div className="flex-shrink-0 text-primary">{icon}</div>
+            <div>
+                <p className="text-3xl font-black text-slate-900">{value}</p>
+                <p className="text-sm text-slate-600">{label}</p>
+            </div>
+        </div>
+    </div>
+);
 
 
 export default function WhitePaperSection() {
@@ -135,17 +147,13 @@ export default function WhitePaperSection() {
                         
                          <ArticleSection overline="Part III" title="The Value Proposition Paradox">
                             <p>The Australian real estate industry faces its most significant existential crisis since the 2008 Global Financial Crisis, a crisis exacerbated by a collective delusion that "property only goes up," akin to a "national MLM scheme." This section critically examines the core argument that technology has rendered many traditional agent services obsolete, yet their commission structure remains largely unchanged.</p>
-                             <ArticleTable
-                                caption="The Value Proposition Paradox: Technology vs. Service"
-                                headers={['Metric', 'Value']}
-                                rows={[
-                                    ['Increase in home prices since 1990', '340%'],
-                                    ['Fundamental change in agent service delivery', '0%'],
-                                    ['Increase in online property searches', '156%'],
-                                    ['Buyers finding homes before contacting agents', '67%'],
-                                    ['Annual commissions for automated services', '$8.4 billion']
-                                ]}
-                            />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                                <ValuePropCard icon={<TrendingUp className="h-8 w-8" />} value="340%" label="Increase in home prices since 1990" />
+                                <ValuePropCard icon={<Home className="h-8 w-8" />} value="0%" label="Fundamental change in agent service delivery" />
+                                <ValuePropCard icon={<Search className="h-8 w-8" />} value="156%" label="Increase in online property searches" />
+                                <ValuePropCard icon={<ArrowRight className="h-8 w-8" />} value="67%" label="Buyers finding homes before contacting agents" />
+                                <ValuePropCard icon={<DollarSign className="h-8 w-8" />} value="$8.4B" label="Annual commissions for automated services" />
+                            </div>
                              <p>The industry is ripe for its "Uber moment." While REA Group's algorithm prices homes "more accurately than their '30 years of experience' ever could," agents continue to operate with clipboards, highlighting a severe technological lag. A core value proposition of traditional agents – their market knowledge and pricing expertise – is being systematically eroded by technology.</p>
                              <PullQuote>If algorithms can price more accurately, a significant portion of the agent's "expertise" becomes redundant.</PullQuote>
                             <p>Furthermore, agents are benefiting disproportionately from market appreciation without contributing additional value or innovation to justify the increased income. This creates a moral hazard where agents have little incentive to innovate or reduce costs, as their income automatically increases with rising property values. It transforms their role from active service providers to passive beneficiaries of market inflation.</p>
