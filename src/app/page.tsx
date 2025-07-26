@@ -12,6 +12,7 @@ import CtaSection from '@/components/sections/cta';
 import Footer from '@/components/layout/footer';
 import AuditDashboard from '@/components/sections/audit-dashboard';
 import Link from 'next/link';
+import DidYouMissCta from '@/components/sections/did-you-miss-cta';
 
 export default function Home() {
   return (
@@ -44,6 +45,7 @@ export default function Home() {
             </div>
         </div>
         <CtaSection />
+        <DidYouMissCta />
       </main>
       <Footer />
     </div>
