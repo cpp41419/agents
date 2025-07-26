@@ -44,7 +44,7 @@ export default function EffortDistributionSection() {
     <section className="w-full py-16 md:py-24 lg:py-32 bg-white text-gray-800">
       <div className="container px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
-          <div className="flex items-center justify-center lg:order-2" ref={ref}>
+          <div className="flex items-center justify-center" ref={ref}>
              <ChartContainer
                 config={chartConfig}
                 className="mx-auto aspect-square max-h-[350px]"
@@ -96,7 +96,7 @@ export default function EffortDistributionSection() {
                 </PieChart>
               </ChartContainer>
           </div>
-          <div className="space-y-4 lg:order-1">
+          <div className="space-y-4">
             <p className="font-semibold text-primary uppercase tracking-wider">The 80/20 Problem</p>
             <h2 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-5xl text-gray-900">Uneven Workload, Full Commission.</h2>
             <p className="max-w-[600px] text-gray-600 text-lg md:text-xl/relaxed">
