@@ -11,6 +11,7 @@ import RiskMitigation from '@/components/sections/risk-mitigation';
 import NewPlayersSection from '@/components/sections/new-players';
 import CtaSection from '@/components/sections/cta';
 import Footer from '@/components/layout/footer';
+import StatisticalImpossibility from '@/components/sections/statistical-impossibility';
 
 export default function Home() {
   return (
@@ -30,7 +31,12 @@ export default function Home() {
         <WhitePaperSection />
         <TerminologyExplainer />
         <RiskMitigation />
-        <NewPlayersSection />
+        <div className="py-16 lg:py-24 bg-background">
+            <div className="container grid md:grid-cols-2 gap-8">
+                <NewPlayersSection />
+                <StatisticalImpossibility />
+            </div>
+        </div>
         <CtaSection />
       </main>
       <Footer />
