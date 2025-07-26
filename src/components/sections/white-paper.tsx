@@ -8,6 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Rocket, FileText, Forward, TrendingUp, Search, Home, DollarSign, ArrowRight } from "lucide-react";
+import AnomalyAlertBanner from "./anomaly-alert-banner";
 
 
 const ArticleSection = ({ title, overline, children, hasDropCap = false }: { title: string, overline: string, children: React.ReactNode, hasDropCap?: boolean }) => (
@@ -16,18 +17,6 @@ const ArticleSection = ({ title, overline, children, hasDropCap = false }: { tit
         <h3 className="text-3xl font-black tracking-tight text-gray-900">{title}</h3>
         <div className={`space-y-6 text-gray-700 text-lg leading-relaxed ${hasDropCap ? 'first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left' : ''}`}>
             {children}
-        </div>
-    </div>
-);
-
-const AnomalyAlertBanner = () => (
-    <div className="my-12 rounded-lg border-2 border-dashed border-red-600 bg-gradient-to-r from-red-500 to-orange-400 p-6 text-white shadow-2xl animate-pulse">
-        <div className="flex items-center gap-4">
-            <div className="text-4xl">⚠️</div>
-            <div>
-                <h4 className="text-xl font-bold uppercase tracking-wider">Australian Market Anomaly Detected</h4>
-                <p className="font-light">This practice exists nowhere else on Earth</p>
-            </div>
         </div>
     </div>
 );
