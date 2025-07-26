@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from "@/lib/utils";
+import { Button } from '@/components/ui/button';
 
 const AnomalyAlertBanner = ({ className }: { className?: string }) => {
     const [visible, setVisible] = useState(true);
@@ -28,13 +29,12 @@ const AnomalyAlertBanner = ({ className }: { className?: string }) => {
                         <p className="text-gray-300">This practice exists nowhere else on Earth.</p>
                     </div>
                 </div>
-                <button
+                <Button
                     onClick={() => setVisible(false)}
-                    className="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring"
                     aria-label="Dismiss"
                 >
                     Dismiss
-                </button>
+                </Button>
             </div>
         </motion.div>
     );
