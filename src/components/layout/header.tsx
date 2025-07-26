@@ -14,6 +14,9 @@ export default function Header() {
           </Link>
         </div>
         <nav className="flex items-center gap-6 text-sm">
+          <Link href="/economist-chart" className="font-medium text-muted-foreground transition-colors hover:text-foreground">
+            Economist Chart
+          </Link>
           <Link href="/audit" className="font-medium text-muted-foreground transition-colors hover:text-foreground">
             Exploitation Audit
           </Link>
