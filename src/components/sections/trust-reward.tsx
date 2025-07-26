@@ -4,6 +4,8 @@ import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxi
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart"
 import type { ChartConfig } from "@/components/ui/chart"
+import { useInView } from "react-intersection-observer"
+import { animated, useSpring } from "@react-spring/web"
 
 const chartData = [
   { category: "Public Trust", value: 15, fill: "var(--color-trust)" },
@@ -24,7 +26,20 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
+const AnimatedBar = animated(Bar);
+
 export default function TrustRewardSection() {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    });
+
+    const springs = useSpring({
+        from: { y: 100, opacity: 0 },
+        to: { y: inView ? 0 : 100, opacity: inView ? 1 : 0 },
+        config: { mass: 1, tension: 280, friction: 60 },
+    });
+
   return (
     <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary text-secondary-foreground">
       <div className="container px-4 md:px-6">
@@ -36,7 +51,7 @@ export default function TrustRewardSection() {
               Public perception of real estate agents is at an all-time low, yet their income potential remains remarkably high. This chart visualizes the stark contrast between the low trust placed in agents and the high financial rewards they can reap.
             </p>
           </div>
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center" ref={ref}>
             <Card className="w-full max-w-lg border-border/60 shadow-lg bg-card/80">
               <CardHeader>
                 <CardTitle className="text-2xl">Trust vs. Reward</CardTitle>
@@ -64,7 +79,7 @@ export default function TrustRewardSection() {
                       cursor={false}
                       content={<ChartTooltipContent indicator="dot" />}
                     />
-                    <Bar dataKey="value" radius={8} />
+                    <AnimatedBar dataKey="value" radius={8} style={springs} />
                   </BarChart>
                 </ChartContainer>
               </CardContent>

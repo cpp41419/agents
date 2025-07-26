@@ -4,6 +4,8 @@ import { Pie, PieChart, Cell } from "recharts"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 import type { ChartConfig } from "@/components/ui/chart"
+import { useInView } from "react-intersection-observer"
+import { animated, useSpring } from "@react-spring/web"
 
 const chartData = [
   { party: "Consumer", effort: 80, fill: "var(--color-consumer)" },
@@ -24,12 +26,25 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
+const AnimatedPie = animated(Pie);
+
 export default function EffortDistributionSection() {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    });
+
+    const spring = useSpring({
+        from: { endAngle: 0 },
+        to: { endAngle: inView ? 360 : 0 },
+        config: { duration: 1000 },
+    });
+
   return (
     <section className="w-full py-16 md:py-24 lg:py-32 bg-white text-gray-800">
       <div className="container px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
-          <div className="flex items-center justify-center lg:order-2">
+          <div className="flex items-center justify-center lg:order-2" ref={ref}>
              <ChartContainer
                 config={chartConfig}
                 className="mx-auto aspect-square max-h-[350px]"
@@ -39,7 +54,7 @@ export default function EffortDistributionSection() {
                     cursor={false}
                     content={<ChartTooltipContent hideLabel />}
                   />
-                  <Pie
+                  <AnimatedPie
                     data={chartData}
                     dataKey="effort"
                     nameKey="party"
@@ -72,11 +87,12 @@ export default function EffortDistributionSection() {
                         </text>
                       )
                     }}
+                    {...spring}
                   >
                      {chartData.map((entry) => (
                       <Cell key={`cell-${entry.party}`} fill={entry.fill} className="focus:outline-none ring-0" />
                     ))}
-                  </Pie>
+                  </AnimatedPie>
                 </PieChart>
               </ChartContainer>
           </div>

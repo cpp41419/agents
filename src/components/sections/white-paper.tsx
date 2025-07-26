@@ -10,11 +10,13 @@ import {
 import { Rocket, FileText, Forward, TrendingUp, Search, Home, DollarSign, ArrowRight } from "lucide-react";
 
 
-const ArticleSection = ({ title, overline, children }: { title: string, overline: string, children: React.ReactNode }) => (
+const ArticleSection = ({ title, overline, children, hasDropCap = false }: { title: string, overline: string, children: React.ReactNode, hasDropCap?: boolean }) => (
     <div className="space-y-6">
         <p className="font-semibold text-primary uppercase tracking-wider">{overline}</p>
         <h3 className="text-3xl font-black tracking-tight text-gray-900">{title}</h3>
-        <div className="space-y-6 text-gray-700 text-lg leading-relaxed">{children}</div>
+        <div className="space-y-6 text-gray-700 text-lg leading-relaxed first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left">
+            {children}
+        </div>
     </div>
 );
 
@@ -79,7 +81,7 @@ export default function WhitePaperSection() {
 
                     <div className="space-y-16">
                         <ArticleSection overline="Executive Summary" title="The $8.4 Billion Question">
-                             <p>The Australian real estate sector is defined by a profound paradox: agents are widely distrusted and perceived as providing technologically obsolete services, yet they remain systemically indispensable. This report deconstructs this "beautiful contradiction," revealing how a profession built on information scarcity persists in an age of abundance, and why its eventual transformation, rather than outright extinction, is both inevitable and necessary.</p>
+                             <p className="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left">The Australian real estate sector is defined by a profound paradox: agents are widely distrusted and perceived as providing technologically obsolete services, yet they remain systemically indispensable. This report deconstructs this "beautiful contradiction," revealing how a profession built on information scarcity persists in an age of abundance, and why its eventual transformation, rather than outright extinction, is both inevitable and necessary.</p>
                             <p>The industry extracts an estimated $8.4 billion annually from property transactions, a significant financial flow that underscores the economic friction points at the heart of the market. This substantial outlay occurs despite consumer skepticism regarding the value agents provide. Many traditional agent functions have been rendered obsolete by digital tools, leading to an effective hourly rate for agents that can exceed $2,500 for actual work performed. This unsustainable model necessitates rapid digital transformation, with an estimated industry transformation timeline of 2 years maximum.</p>
                             <ArticleTable
                                 caption="Executive Summary: Key Industry Metrics"
@@ -97,7 +99,7 @@ export default function WhitePaperSection() {
                         </ArticleSection>
 
                         <ArticleSection overline="Part I" title="The Trust Deficit and Economic Extraction">
-                            <p>The profound public distrust of real estate agents is a striking feature of the Australian property landscape. Provocatively, they are often perceived as "the Nigerian princes of property transactions," a professional class that has seemingly convinced society that unlocking doors requires a "university degree in bullshit and a 6% cut of your children's inheritance." This perception is not mere hyperbole; it is supported by empirical data. Real estate agents are less trusted than journalists (9%), politicians (12%), and even the individual responsible for cleaning portable toilets at music festivals.</p>
+                            <p className="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left">The profound public distrust of real estate agents is a striking feature of the Australian property landscape. Provocatively, they are often perceived as "the Nigerian princes of property transactions," a professional class that has seemingly convinced society that unlocking doors requires a "university degree in bullshit and a 6% cut of your children's inheritance." This perception is not mere hyperbole; it is supported by empirical data. Real estate agents are less trusted than journalists (9%), politicians (12%), and even the individual responsible for cleaning portable toilets at music festivals.</p>
                             <PullQuote>
                                 This table visually demonstrates the extreme disconnect between the financial rewards in the real estate profession and its public trust rating.
                             </PullQuote>
@@ -129,7 +131,7 @@ export default function WhitePaperSection() {
                         </ArticleSection>
 
                         <ArticleSection overline="Part II" title="The Mirror We Hate Looking Into">
-                            <p>The widespread contempt for real estate agents conceals a deeper duality. What is often resented is not merely the agents themselves, but the mirror they hold up to Australia's property-obsessed culture. Real estate agents reflect the ugliest parts of the national psyche: greed commodified, shelter financialized, and community reduced to comparable sales.</p>
+                            <p className="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left">The widespread contempt for real estate agents conceals a deeper duality. What is often resented is not merely the agents themselves, but the mirror they hold up to Australia's property-obsessed culture. Real estate agents reflect the ugliest parts of the national psyche: greed commodified, shelter financialized, and community reduced to comparable sales.</p>
                              <ArticleTable
                                 caption="Australia's Property Psychosis: Key Indicators"
                                 headers={['Metric', 'Value']}
@@ -146,7 +148,7 @@ export default function WhitePaperSection() {
                         </ArticleSection>
                         
                          <ArticleSection overline="Part III" title="The Value Proposition Paradox">
-                            <p>The Australian real estate industry faces its most significant existential crisis since the 2008 Global Financial Crisis, a crisis exacerbated by a collective delusion that "property only goes up," akin to a "national MLM scheme." This section critically examines the core argument that technology has rendered many traditional agent services obsolete, yet their commission structure remains largely unchanged.</p>
+                            <p className="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left">The Australian real estate industry faces its most significant existential crisis since the 2008 Global Financial Crisis, a crisis exacerbated by a collective delusion that "property only goes up," akin to a "national MLM scheme." This section critically examines the core argument that technology has rendered many traditional agent services obsolete, yet their commission structure remains largely unchanged.</p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
                                 <ValuePropCard icon={<TrendingUp className="h-8 w-8" />} value="340%" label="Increase in home prices since 1990" />
                                 <ValuePropCard icon={<Home className="h-8 w-8" />} value="0%" label="Fundamental change in agent service delivery" />
@@ -160,7 +162,7 @@ export default function WhitePaperSection() {
                         </ArticleSection>
 
                         <ArticleSection overline="Part IV" title="Case Study: Lessons from PropTech Disruption">
-                             <p>Compass's spectacular failure serves as a crucial cautionary tale for the PropTech sector. The company "speedran the entire tech startup playbook from 'disruption' to 'bankruptcy'," demonstrating that simply throwing vast capital and advanced technology at a complex human problem is insufficient for true market transformation.</p>
+                             <p className="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left">Compass's spectacular failure serves as a crucial cautionary tale for the PropTech sector. The company "speedran the entire tech startup playbook from 'disruption' to 'bankruptcy'," demonstrating that simply throwing vast capital and advanced technology at a complex human problem is insufficient for true market transformation.</p>
                              <ArticleTable
                                 caption="Compass: A Case Study in PropTech Miscalculation"
                                 headers={['Metric', 'Value']}
@@ -179,7 +181,7 @@ export default function WhitePaperSection() {
                         </ArticleSection>
                         
                         <ArticleSection overline="Part V" title="The Mathematical Impossibility">
-                             <p>The current commission structure in Australian real estate presents a perceived "mathematical impossibility" when juxtaposed against the actual value-added time contributed by agents. This section provides a granular breakdown, exposing the perceived overcharging.</p>
+                             <p className="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left">The current commission structure in Australian real estate presents a perceived "mathematical impossibility" when juxtaposed against the actual value-added time contributed by agents. This section provides a granular breakdown, exposing the perceived overcharging.</p>
                              <ArticleTable
                                 caption="Agent Value-Add vs. Effective Hourly Cost"
                                 headers={['Metric', 'Value']}
@@ -197,7 +199,7 @@ export default function WhitePaperSection() {
                         </ArticleSection>
 
                         <ArticleSection overline="Part VI" title="The Digital Decimation Already Underway">
-                            <p>The digital transformation is not a future threat but an ongoing reality, actively "eating the industry alive." This section provides concrete evidence of this market disruption.</p>
+                            <p className="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left">The digital transformation is not a future threat but an ongoing reality, actively "eating the industry alive." This section provides concrete evidence of this market disruption.</p>
                              <ArticleTable
                                 caption="Digital Disruption Indicators in Australian Real Estate"
                                 headers={['Metric', 'Value']}
@@ -214,7 +216,7 @@ export default function WhitePaperSection() {
                         </ArticleSection>
 
                         <ArticleSection overline="Part VII" title="The Necessary Evil We've Created">
-                            <p>An uncomfortable truth emerges: real estate is complex not because agents made it so, but because society, collectively, demanded it through layers of regulations, protections, and paperwork. Agents, in this context, are "antibodies" to a "disease" of complexity that society itself created.</p>
+                            <p className="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left">An uncomfortable truth emerges: real estate is complex not because agents made it so, but because society, collectively, demanded it through layers of regulations, protections, and paperwork. Agents, in this context, are "antibodies" to a "disease" of complexity that society itself created.</p>
                              <PullQuote>
                                Every civilization builds monuments to its fears. The Egyptians built pyramids. We built property contracts.
                              </PullQuote>
@@ -236,7 +238,7 @@ export default function WhitePaperSection() {
                         </ArticleSection>
 
                         <ArticleSection overline="Part VIII" title="The Human Cost of Property Obsession">
-                            <p>Property transactions exact a profound psychological and emotional toll on consumers, highlighting the "therapy" agents implicitly provide.</p>
+                            <p className="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left">Property transactions exact a profound psychological and emotional toll on consumers, highlighting the "therapy" agents implicitly provide.</p>
                              <ArticleTable
                                 caption="Psychological Toll of Property Transactions"
                                 headers={['Metric', 'Value']}
@@ -266,7 +268,7 @@ export default function WhitePaperSection() {
                         </ArticleSection>
 
                         <ArticleSection overline="Part IX" title="The Defense No One Wants to Hear">
-                            <p>In a system this fundamentally broken, competent agents are not parasites but "antibodies." They exist because the "disease exists," and their value lies in navigating this inherent dysfunction.</p>
+                            <p className="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left">In a system this fundamentally broken, competent agents are not parasites but "antibodies." They exist because the "disease exists," and their value lies in navigating this inherent dysfunction.</p>
                             <PullQuote>There's something profound about paying people you hate to protect you from yourself.</PullQuote>
                              <ArticleTable
                                 caption="Competent Agent: Core Value Proposition"
@@ -286,7 +288,7 @@ export default function WhitePaperSection() {
                         </ArticleSection>
 
                         <ArticleSection overline="Part X" title="The Coming Revolution">
-                            <p>Based on current trajectories, the real estate industry will witness unprecedented transformation. This is an inevitable evolution, not a mere possibility.</p>
+                            <p className="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left">Based on current trajectories, the real estate industry will witness unprecedented transformation. This is an inevitable evolution, not a mere possibility.</p>
                              <ArticleTable
                                 caption="Real Estate Industry Transformation: 2027 Projections"
                                 headers={['Metric', 'Value']}
@@ -303,7 +305,7 @@ export default function WhitePaperSection() {
                         </ArticleSection>
 
                         <ArticleSection overline="Part XI" title="Evolution or Extinction: Recommendations for Stakeholders">
-                            <div>
+                            <div className="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left">
                                 <h4 className="text-2xl font-bold text-gray-900">For Consumers:</h4>
                                 <ul className="list-none pl-0 mt-4 space-y-4">
                                     <li className="flex items-start gap-3"><Forward className="h-6 w-6 text-primary flex-shrink-0 mt-1" /><span><strong>Demand transparent, performance-based pricing:</strong> Shift away from flat percentage commissions to models that reflect actual value delivered.</span></li>
@@ -322,7 +324,7 @@ export default function WhitePaperSection() {
                         </ArticleSection>
                         
                          <ArticleSection overline="Conclusion" title="Rebuilding Trust and Value">
-                            <p>The widespread animosity towards real estate agents is not merely personal resentment but a profound reflection of Australia's "national sickness" – the transformation of shelter into speculation, community into commodity, and homes into investment portfolios.</p>
+                            <p className="first-letter:text-7xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left">The widespread animosity towards real estate agents is not merely personal resentment but a profound reflection of Australia's "national sickness" – the transformation of shelter into speculation, community into commodity, and homes into investment portfolios.</p>
                             <PullQuote>We're not addicted to houses — we're addicted to the dopamine hit of paper wealth. Agents are merely monetizing this addiction.</PullQuote>
                             <p>The traditional real estate industry has two years left. Maximum. The choice for stakeholders is clear: to lead the transformation or become "roadkill" in the inevitable disruption. The future is not about eliminating agents, but about evolving their role into indispensable advisors who navigate complexity, mitigate risk, and provide essential emotional support.</p>
                              <p className="text-2xl font-bold text-center text-gray-900 pt-4">The best way to beat a broken system is to rebuild it with better people.</p>
