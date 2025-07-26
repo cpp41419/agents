@@ -8,7 +8,7 @@ import StressLevelSection from '@/components/sections/stress-level';
 import WhitePaperSection from '@/components/sections/white-paper';
 import TerminologyExplainer from '@/components/sections/terminology-explainer';
 import RiskMitigation from '@/components/sections/risk-mitigation';
-import NewPlayersSection from '@/components/sections/new-players';
+import AuthoritativeTestimonial from '@/components/sections/authoritative-testimonial';
 import CtaSection from '@/components/sections/cta';
 import Footer from '@/components/layout/footer';
 import StatisticalImpossibility from '@/components/sections/statistical-impossibility';
@@ -33,7 +33,7 @@ export default function Home() {
         <RiskMitigation />
         <div className="py-16 lg:py-24 bg-background">
             <div className="container grid md:grid-cols-2 gap-8">
-                <NewPlayersSection />
+                <AuthoritativeTestimonial />
                 <StatisticalImpossibility />
             </div>
         </div>
