@@ -7,7 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { Rocket, FileText, Forward, TrendingUp, Search, Home, DollarSign, ArrowRight } from "lucide-react";
+import { Rocket, FileText, Forward, TrendingUp, Search, Home, DollarSign, ArrowRight, BrainCircuit, Users, Bed, BarChart, ShieldAlert, Clock } from "lucide-react";
 import AnomalyAlertBanner from "./anomaly-alert-banner";
 import ProfessionTrustChart from "./profession-trust-chart";
 
@@ -63,6 +63,16 @@ const ValuePropCard = ({ icon, value, label }: { icon: React.ReactNode, value: s
                 <p className="text-sm text-slate-600">{label}</p>
             </div>
         </div>
+    </div>
+);
+
+const MetricCircle = ({ icon, value, label }: { icon: React.ReactNode, value: string, label: string }) => (
+    <div className="flex flex-col items-center justify-center text-center p-4">
+        <div className="relative flex items-center justify-center w-36 h-36 rounded-full bg-slate-200 border-4 border-slate-300 shadow-inner">
+            <div className="absolute text-primary opacity-10">{icon}</div>
+            <span className="relative text-4xl font-black text-slate-800">{value}</span>
+        </div>
+        <p className="mt-4 text-base font-semibold text-slate-700 max-w-[150px]">{label}</p>
     </div>
 );
 
@@ -232,18 +242,14 @@ export default function WhitePaperSection() {
 
                         <ArticleSection overline="Part VIII" title="The Human Cost of Property Obsession" hasDropCap>
                             <p>Property transactions exact a profound psychological and emotional toll on consumers, highlighting the "therapy" agents implicitly provide.</p>
-                             <ArticleTable
-                                caption="Psychological Toll of Property Transactions"
-                                headers={['Metric', 'Value']}
-                                rows={[
-                                    ['Cortisol levels above baseline', '340%'],
-                                    ['Reported increase in relationship conflict', '67%'],
-                                    ['Average sleep during purchase', '4.3 hours'],
-                                    ['Decision fatigue index', '8.7/10'],
-                                    ["Buyer's remorse incidence", '52%'],
-                                    ['Post-purchase anxiety duration', '3-6 months']
-                                ]}
-                            />
+                            <div className="my-8 grid grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-8 justify-items-center">
+                                <MetricCircle icon={<BrainCircuit size={80} />} value="340%" label="Cortisol levels above baseline" />
+                                <MetricCircle icon={<Users size={80} />} value="67%" label="Increase in relationship conflict" />
+                                <MetricCircle icon={<Bed size={80} />} value="4.3h" label="Average sleep during purchase" />
+                                <MetricCircle icon={<BarChart size={80} />} value="8.7/10" label="Decision fatigue index" />
+                                <MetricCircle icon={<ShieldAlert size={80} />} value="52%" label="Buyer's remorse incidence" />
+                                <MetricCircle icon={<Clock size={80} />} value="3-6mo" label="Post-purchase anxiety duration" />
+                            </div>
                              <p>Every Saturday morning, Australians gather to watch their neighbors compete for shelter like it's a reality TV show where the prize is crippling debt. This "auction theatre" highlights the intense pressure and competitive environment.</p>
                              <ArticleTable
                                 caption="Auction Dynamics and Potential Manipulation Tactics"
