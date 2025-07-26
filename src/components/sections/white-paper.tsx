@@ -7,9 +7,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { Rocket, FileText, Forward, TrendingUp, Search, Home, DollarSign, ArrowRight, BrainCircuit, Users, Bed, BarChart, ShieldAlert, Clock } from "lucide-react";
+import { Rocket, FileText, Forward, TrendingUp, Search, Home, DollarSign, ArrowRight, BrainCircuit, Users, Bed, BarChart, ShieldAlert, Clock, Gauge, UserCheck, SearchX, AlertTriangle, Hourglass } from "lucide-react";
 import AnomalyAlertBanner from "./anomaly-alert-banner";
 import ProfessionTrustChart from "./profession-trust-chart";
+import KeyMetrics from "./key-metrics";
 
 
 const ArticleSection = ({ title, overline, children, hasDropCap = false }: { title: string, overline: string, children: React.ReactNode, hasDropCap?: boolean }) => (
@@ -96,18 +97,7 @@ export default function WhitePaperSection() {
                         <ArticleSection overline="Executive Summary" title="The $8.4 Billion Question" hasDropCap>
                              <p>The Australian real estate sector is defined by a profound paradox: agents are widely distrusted and perceived as providing technologically obsolete services, yet they remain systemically indispensable. This report deconstructs this "beautiful contradiction," revealing how a profession built on information scarcity persists in an age of abundance, and why its eventual transformation, rather than outright extinction, is both inevitable and necessary.</p>
                             <p>The industry extracts an estimated $8.4 billion annually from property transactions, a significant financial flow that underscores the economic friction points at the heart of the market. This substantial outlay occurs despite consumer skepticism regarding the value agents provide. Many traditional agent functions have been rendered obsolete by digital tools, leading to an effective hourly rate for agents that can exceed $2,500 for actual work performed. This unsustainable model necessitates rapid digital transformation, with an estimated industry transformation timeline of 2 years maximum.</p>
-                            <ArticleTable
-                                caption="Executive Summary: Key Industry Metrics"
-                                headers={['Metric', 'Value']}
-                                rows={[
-                                    ['Annual Commission Extraction', '$8.4 billion'],
-                                    ['Homebuyers Questioning Agent Value', '73%'],
-                                    ['Buyers Finding Properties Independently', '67%'],
-                                    ['Failure Rate for Unrepresented Buyers', '33%'],
-                                    ['Agent Effective Hourly Rate (Actual Work)', '>$2,500'],
-                                    ['Projected Industry Transformation Timeline', '2 years maximum']
-                                ]}
-                            />
+                            <KeyMetrics />
                             <p>This immediate snapshot of the report's central arguments quickly establishes the financial scale of the industry, the prevailing consumer sentiment (skepticism and self-reliance), and the critical, often hidden, function agents still perform (preventing transaction failures). By presenting these contrasting data points upfront, the core paradox and the urgency of the impending transformation are immediately framed for the strategic decision-maker.</p>
                         </ArticleSection>
 
