@@ -82,13 +82,13 @@ const EconomistChart = () => {
                     <Line type="monotone" dataKey="commission" yAxisId="left" stroke="#006BA2" strokeWidth={2} dot={false} />
                     <Line type="monotone" dataKey="costs" yAxisId="right" stroke="#E3120B" strokeWidth={2} dot={false} />
                     
-                    <ReferenceLine x={2008} stroke="rgba(0,0,0,0.5)" strokeDasharray="3 3" strokeWidth={0.5}>
+                    <ReferenceLine yAxisId="left" x={2008} stroke="rgba(0,0,0,0.5)" strokeDasharray="3 3" strokeWidth={0.5}>
                          <text x={2008} y={20} fill="rgba(0,0,0,0.7)" textAnchor="middle" fontSize="6.5pt">Housing Crisis</text>
                     </ReferenceLine>
-                    <ReferenceLine x={2015} stroke="rgba(0,0,0,0.5)" strokeDasharray="3 3" strokeWidth={0.5}>
+                    <ReferenceLine yAxisId="left" x={2015} stroke="rgba(0,0,0,0.5)" strokeDasharray="3 3" strokeWidth={0.5}>
                         <text x={2015} y={40} fill="rgba(0,0,0,0.7)" textAnchor="middle" fontSize="6.5pt">Digital Disruption</text>
                     </ReferenceLine>
-                     <ReferenceLine x={2021} stroke="rgba(0,0,0,0.5)" strokeDasharray="3 3" strokeWidth={0.5}>
+                     <ReferenceLine yAxisId="left" x={2021} stroke="rgba(0,0,0,0.5)" strokeDasharray="3 3" strokeWidth={0.5}>
                         <text x={2021} y={60} fill="rgba(0,0,0,0.7)" textAnchor="middle" fontSize="6.5pt">Post-COVID Surge</text>
                     </ReferenceLine>
                 </ComposedChart>
