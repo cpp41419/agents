@@ -1,7 +1,7 @@
 
 "use client"
 
-import { Scatter, ScatterChart, CartesianGrid, Tooltip, XAxis, YAxis, ZAxis, Legend, Cell, ResponsiveContainer } from "recharts"
+import { Scatter, ScatterChart, CartesianGrid, Tooltip, XAxis, YAxis, ZAxis, Legend, Cell } from "recharts"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChartContainer, ChartTooltipContent, ChartLegend, ChartLegendContent } from "@/components/ui/chart"
 import type { ChartConfig } from "@/components/ui/chart"
@@ -78,7 +78,7 @@ export default function TrustRewardSection() {
                 <CardDescription className="text-sm">Trust vs. Income, Sized by Training Time</CardDescription>
               </CardHeader>
               <CardContent>
-                <ResponsiveContainer width="100%" height={300}>
+                <ChartContainer config={chartConfig} className="w-full h-[300px]">
                     <ScatterChart
                         margin={{
                             top: 20,
@@ -136,7 +136,7 @@ export default function TrustRewardSection() {
                             ))}
                         </AnimatedScatter>
                     </ScatterChart>
-                </ResponsiveContainer>
+                </ChartContainer>
               </CardContent>
                <p className="text-xs text-muted-foreground text-center pt-2">Sources: NAR; CoreLogic; The Economist calculations</p>
             </Card>
