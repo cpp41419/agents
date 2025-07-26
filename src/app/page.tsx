@@ -8,7 +8,6 @@ import StressLevelSection from '@/components/sections/stress-level';
 import WhitePaperSection from '@/components/sections/white-paper';
 import TerminologyExplainer from '@/components/sections/terminology-explainer';
 import RiskMitigation from '@/components/sections/risk-mitigation';
-import AuthoritativeTestimonial from '@/components/sections/authoritative-testimonial';
 import CtaSection from '@/components/sections/cta';
 import Footer from '@/components/layout/footer';
 import AuditDashboard from '@/components/sections/audit-dashboard';
