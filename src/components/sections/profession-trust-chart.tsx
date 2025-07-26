@@ -34,21 +34,21 @@ const chartData = [
     profession: 'Doctors',
     income: 250,
     trust: 87,
-    training: 7,
+    training: 8,
     fill: 'var(--color-doctors)',
   },
   {
     profession: 'Lawyers',
     income: 150,
     trust: 34,
-    training: 5,
+    training: 7,
     fill: 'var(--color-lawyers)',
   },
   {
     profession: 'Journalists',
     income: 70,
     trust: 9,
-    training: 3,
+    training: 4,
     fill: 'var(--color-journalists)',
   },
   {
@@ -66,8 +66,8 @@ const chartData = [
     fill: 'var(--color-agents)',
   },
   {
-    profession: 'Used Car Salesmen',
-    income: 80,
+    profession: 'Festival Cleaning Staff',
+    income: 45,
     trust: 8,
     training: 0,
     fill: 'var(--color-salesmen)',
@@ -105,7 +105,7 @@ const chartConfig = {
     color: 'hsl(var(--accent))',
   },
   salesmen: {
-    label: 'Used Car Salesmen',
+    label: 'Festival Cleaning Staff',
     color: 'hsl(var(--chart-5))',
   },
 } satisfies ChartConfig;
@@ -130,7 +130,7 @@ export default function ProfessionTrustChart() {
 
   return (
     <div className="flex items-center justify-center my-8" ref={ref}>
-      <Card className="w-full max-w-2xl border-slate-200 shadow-lg bg-slate-50 text-slate-800">
+      <Card className="w-full max-w-4xl border-slate-200 shadow-lg bg-slate-50 text-slate-800">
         <CardHeader>
           <CardTitle className="text-2xl">
             Trust, Reward & Training
@@ -145,19 +145,22 @@ export default function ProfessionTrustChart() {
             className="min-h-[450px] w-full"
           >
             <ScatterChart
+              width={595}
+              height={400}
               margin={{
                 top: 20,
-                right: 20,
-                bottom: 40,
+                right: 40,
+                bottom: 60,
                 left: 20,
               }}
             >
-              <CartesianGrid strokeDasharray="3 3" className="stroke-slate-200" />
+              <CartesianGrid strokeDasharray="3 3" className="stroke-slate-200/50" />
               <XAxis
                 dataKey="trust"
                 type="number"
                 name="Trust Rating"
                 unit="%"
+                domain={[0, 100]}
                 label={{
                   value: 'Public Trust Rating (%)',
                   position: 'insideBottom',
@@ -172,6 +175,7 @@ export default function ProfessionTrustChart() {
                 type="number"
                 name="Median Income"
                 unit="k"
+                domain={[0, 260]}
                 label={{
                   value: 'Median Income ($k)',
                   angle: -90,
@@ -196,6 +200,7 @@ export default function ProfessionTrustChart() {
                     nameKey="profession"
                     formatter={(value, name, props) => {
                       const { payload } = props;
+                      if(!payload) return null;
                       return (
                         <div className="space-y-1">
                             <p className="font-bold text-base">{payload.profession}</p>
@@ -223,6 +228,11 @@ export default function ProfessionTrustChart() {
                   <Cell key={point.profession} fill={point.fill} className="focus:outline-none ring-0"/>
                 ))}
               </AnimatedScatter>
+                 <foreignObject x={100} y={250} width={200} height={100}>
+                    <p xmlns="http://www.w3.org/1999/xhtml" style={{ fontFamily: 'Econ Sans Cnd Italic', fontSize: '9pt', color: 'black' }}>
+                        &quot;Less trusted than portable toilet cleaners, yet earning more than many professionals&quot;
+                    </p>
+                </foreignObject>
             </ScatterChart>
           </ChartContainer>
         </CardContent>
