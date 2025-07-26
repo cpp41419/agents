@@ -1,7 +1,7 @@
 
 "use client"
 
-import { Scatter, ScatterChart, CartesianGrid, Tooltip, XAxis, YAxis, ZAxis, Legend, Cell } from "recharts"
+import { Scatter, ScatterChart, CartesianGrid, Tooltip, XAxis, YAxis, ZAxis, Legend, Cell, ResponsiveContainer } from "recharts"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChartContainer, ChartTooltipContent, ChartLegend, ChartLegendContent } from "@/components/ui/chart"
 import type { ChartConfig } from "@/components/ui/chart"
@@ -9,12 +9,12 @@ import { useInView } from "react-intersection-observer"
 import { animated, useSpring } from "@react-spring/web"
 
 const chartData = [
-    { profession: "Doctors", income: 250, trust: 87, training: 7, fill: "var(--color-doctors)" },
-    { profession: "Lawyers", income: 150, trust: 34, training: 5, fill: "var(--color-lawyers)" },
-    { profession: "Journalists", income: 70, trust: 9, training: 3, fill: "var(--color-journalists)" },
-    { profession: "Politicians", income: 211, trust: 12, training: 0, fill: "var(--color-politicians)" },
-    { profession: "Real Estate Agents", income: 180, trust: 7, training: 0.5, fill: "var(--color-agents)" },
-    { profession: "Used Car Salesmen", income: 80, trust: 8, training: 0, fill: "var(--color-salesmen)" },
+    { profession: "Doctors", income: 250, trust: 87, training: 10000, category: "Medical" },
+    { profession: "Lawyers", income: 150, trust: 34, training: 7000, category: "Legal" },
+    { profession: "Real Estate Agents", income: 180, trust: 7, training: 500, category: "Real Estate" },
+    { profession: "Journalists", income: 70, trust: 9, training: 3000, category: "Other" },
+    { profession: "Politicians", income: 211, trust: 12, training: 100, category: "Other" },
+    { profession: "Used Car Salesmen", income: 80, trust: 8, training: 50, category: "Other" },
 ];
 
 const chartConfig = {
@@ -25,31 +25,23 @@ const chartConfig = {
     label: "Trust Rating (%)",
   },
   training: {
-    label: "Training (Years)",
+      label: "Training (Hours)"
   },
-  doctors: {
-    label: "Doctors",
-    color: "hsl(var(--chart-1))",
+  Medical: {
+    label: "Medical",
+    color: "#006BA2",
   },
-  lawyers: {
-    label: "Lawyers",
-    color: "hsl(var(--chart-2))",
+  Legal: {
+    label: "Legal",
+    color: "#379A8B",
   },
-  journalists: {
-    label: "Journalists",
-    color: "hsl(var(--chart-3))",
+  'Real Estate': {
+    label: "Real Estate",
+    color: "#E3120B",
   },
-  politicians: {
-    label: "Politicians",
-    color: "hsl(var(--chart-4))",
-  },
-  agents: {
-    label: "Real Estate Agents",
-    color: "hsl(var(--accent))",
-  },
-  salesmen: {
-      label: "Used Car Salesmen",
-      color: "hsl(var(--chart-5))",
+  Other: {
+    label: "Other",
+    color: "#758D99",
   }
 } satisfies ChartConfig
 
@@ -80,54 +72,73 @@ export default function TrustRewardSection() {
             </p>
           </div>
           <div className="flex items-center justify-center" ref={ref}>
-            <Card className="w-full max-w-lg border-border/60 shadow-lg bg-card/80">
+            <Card className="w-full max-w-lg border-border/60 shadow-lg bg-card/80 p-4">
               <CardHeader>
-                <CardTitle className="text-2xl">Trust, Reward & Training</CardTitle>
-                <CardDescription>Trust Rating (%) vs. Median Income ($k)</CardDescription>
+                <CardTitle className="text-xl font-bold">The Trust-Reward Matrix</CardTitle>
+                <CardDescription className="text-sm">Trust vs. Income, Sized by Training Time</CardDescription>
               </CardHeader>
               <CardContent>
-                <ChartContainer config={chartConfig} className="min-h-[400px] w-full">
-                  <ScatterChart
-                    margin={{
-                      top: 20,
-                      right: 20,
-                      bottom: 40,
-                      left: 20,
-                    }}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis
-                      dataKey="trust"
-                      type="number"
-                      name="Trust Rating"
-                      unit="%"
-                      label={{ value: "Public Trust Rating (%)", position: "insideBottom", offset: -25 }}
-                      className="text-sm"
-                    />
-                    <YAxis
-                      dataKey="income"
-                      type="number"
-                      name="Median Income"
-                      unit="k"
-                       label={{ value: "Median Income ($k)", angle: -90, position: "insideLeft" }}
-                      className="text-sm"
-                    />
-                    <ZAxis dataKey="training" type="number" range={[100, 1000]} name="training" unit=" years" />
-                    <Tooltip cursor={{ strokeDasharray: "3 3" }} content={<ChartTooltipContent />} />
-                     <Legend content={<ChartLegendContent />} verticalAlign="bottom" height={50} />
-                    <AnimatedScatter
-                        data={chartData}
-                        fill="var(--color-primary)"
-                        shape="circle"
-                        style={spring}
+                <ResponsiveContainer width="100%" height={300}>
+                    <ScatterChart
+                        margin={{
+                            top: 20,
+                            right: 20,
+                            bottom: 40,
+                            left: 20,
+                        }}
                     >
-                         {chartData.map((point) => (
-                            <Cell key={point.profession} fill={point.fill} />
-                        ))}
-                    </AnimatedScatter>
-                  </ScatterChart>
-                </ChartContainer>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis
+                            dataKey="trust"
+                            type="number"
+                            name="Trust Rating"
+                            domain={[0, 100]}
+                            unit="%"
+                            label={{ value: "Public Trust Rating (%)", position: "insideBottom", offset: -25, style:{ fontSize: '10px' } }}
+                            tick={{fontSize: '10px'}}
+                        />
+                        <YAxis
+                            dataKey="income"
+                            type="number"
+                            name="Median Income"
+                            scale="log"
+                            domain={['dataMin', 'dataMax']}
+                            unit="k"
+                            label={{ value: "Median Income ($k)", angle: -90, position: "insideLeft", style:{ fontSize: '10px' } }}
+                            tick={{fontSize: '10px'}}
+                        />
+                        <ZAxis dataKey="training" type="number" range={[100, 1000]} name="training" unit=" hours" />
+                        <Tooltip 
+                            cursor={{ strokeDasharray: "3 3" }} 
+                            content={({ active, payload }) => {
+                                if (active && payload && payload.length) {
+                                    const data = payload[0].payload;
+                                    return (
+                                        <div className="bg-background/80 p-2 border border-border rounded-md shadow-lg text-sm">
+                                            <p className="font-bold text-base">{data.profession}</p>
+                                            <p>Trust: {data.trust}%</p>
+                                            <p>Income: ${data.income}k</p>
+                                            <p>Training: {data.training} hours</p>
+                                        </div>
+                                    )
+                                }
+                                return null;
+                            }}
+                        />
+                        <Legend content={<ChartLegendContent />} verticalAlign="bottom" height={50} />
+                        <AnimatedScatter
+                            data={chartData}
+                            shape="circle"
+                            style={spring}
+                        >
+                            {chartData.map((point) => (
+                                <Cell key={point.profession} fill={chartConfig[point.category as keyof typeof chartConfig]?.color || '#758D99'} />
+                            ))}
+                        </AnimatedScatter>
+                    </ScatterChart>
+                </ResponsiveContainer>
               </CardContent>
+               <p className="text-xs text-muted-foreground text-center pt-2">Sources: NAR; CoreLogic; The Economist calculations</p>
             </Card>
           </div>
         </div>
