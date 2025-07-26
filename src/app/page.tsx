@@ -11,7 +11,8 @@ import RiskMitigation from '@/components/sections/risk-mitigation';
 import AuthoritativeTestimonial from '@/components/sections/authoritative-testimonial';
 import CtaSection from '@/components/sections/cta';
 import Footer from '@/components/layout/footer';
-import StatisticalImpossibility from '@/components/sections/statistical-impossibility';
+import AuditDashboard from '@/components/sections/audit-dashboard';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -32,9 +33,15 @@ export default function Home() {
         <TerminologyExplainer />
         <RiskMitigation />
         <div className="py-16 lg:py-24 bg-background">
-            <div className="container grid md:grid-cols-2 gap-8">
-                <AuthoritativeTestimonial />
-                <StatisticalImpossibility />
+            <div className="container text-center">
+               <h2 className="text-3xl md:text-5xl font-black text-primary-foreground tracking-tighter">PropTech Disruption Audit</h2>
+                <p className="text-lg md:text-xl mt-2 text-muted-foreground">An Interactive Analysis of the Australian Real Estate Industry</p>
+                <div className="mt-8 border rounded-xl overflow-hidden">
+                    <AuditDashboard />
+                </div>
+                <Link href="/audit" className="inline-block mt-8 text-primary hover:underline">
+                    View Full-Screen Interactive Dashboard
+                </Link>
             </div>
         </div>
         <CtaSection />
