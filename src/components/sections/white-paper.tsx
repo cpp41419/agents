@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/table"
 import { Rocket, FileText, Forward, TrendingUp, Search, Home, DollarSign, ArrowRight } from "lucide-react";
 import AnomalyAlertBanner from "./anomaly-alert-banner";
+import ProfessionTrustChart from "./profession-trust-chart";
 
 
 const ArticleSection = ({ title, overline, children, hasDropCap = false }: { title: string, overline: string, children: React.ReactNode, hasDropCap?: boolean }) => (
@@ -103,20 +104,9 @@ export default function WhitePaperSection() {
                         <ArticleSection overline="Part I" title="The Trust Deficit and Economic Extraction" hasDropCap>
                             <p>The profound public distrust of real estate agents is a striking feature of the Australian property landscape. Provocatively, they are often perceived as "the Nigerian princes of property transactions," a professional class that has seemingly convinced society that unlocking doors requires a "university degree in bullshit and a 6% cut of your children's inheritance." This perception is not mere hyperbole; it is supported by empirical data. Real estate agents are less trusted than journalists (9%), politicians (12%), and even the individual responsible for cleaning portable toilets at music festivals.</p>
                             <PullQuote>
-                                This table visually demonstrates the extreme disconnect between the financial rewards in the real estate profession and its public trust rating.
+                                This chart visually demonstrates the extreme disconnect between the financial rewards in the real estate profession and its public trust rating.
                             </PullQuote>
-                             <ArticleTable
-                                caption="The Trust Deficit: A Statistical Analysis"
-                                headers={['Profession', 'Trust Rating', 'Annual Income', 'Barrier to Entry']}
-                                rows={[
-                                    ['Real Estate Agents', '7%', '$49,000-$325,000', '6 months training'],
-                                    ['Used Car Salesmen', '8%', '$45,000-$120,000', 'None'],
-                                    ['Journalists', '9%', '$48,000-$95,000', '3-year degree'],
-                                    ['Politicians', '12%', '$211,000+', 'Get elected'],
-                                    ['Lawyers', '34%', '$85,000-$250,000', '5-year degree'],
-                                    ['Doctors', '87%', '$150,000-$500,000', '7-year degree']
-                                ]}
-                            />
+                             <ProfessionTrustChart />
                             <p>The financial mechanics fueling public resentment are clear. An average commission of $84,000 on a $1.4M Sydney home is extracted for an estimated 40-60 hours of actual work per transaction. This translates to an effective hourly rate of $1,400-$2,100. This staggering figure is juxtaposed against a minimal 0.5 years of training required and a dismal 7% public trust rating.</p>
                             <ArticleTable
                                 caption="The Mathematics of Delusion: Cost vs. Perceived Value"
