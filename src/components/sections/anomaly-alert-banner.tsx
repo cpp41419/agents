@@ -1,18 +1,43 @@
+'use client';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { cn } from "@/lib/utils";
 
-const AnomalyAlertBanner = ({ className }: { className?: string }) => (
-    <div className={cn(
-        "my-12 rounded-lg border-2 border-dashed border-red-600 bg-gradient-to-r from-red-600 to-yellow-500 p-6 text-white shadow-[0_0_20px_rgba(220,38,38,0.8)] animate-pulse",
-        className
-    )}>
-        <div className="flex items-center justify-center gap-4 text-center">
-            <div className="text-4xl">⚠️</div>
-            <div>
-                <h4 className="text-xl font-black uppercase tracking-wider md:text-2xl">Australian Market Anomaly Detected</h4>
-                <p className="font-light text-base md:text-lg">This practice exists nowhere else on Earth</p>
+const AnomalyAlertBanner = ({ className }: { className?: string }) => {
+    const [visible, setVisible] = useState(true);
+
+    if (!visible) return null;
+
+    return (
+        <motion.div
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className={cn(
+                "relative my-12 p-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white shadow-lg border-b-4 border-red-500 rounded-lg",
+                className
+            )}
+            role="alert"
+            aria-label="Australian market anomaly detected"
+        >
+            <div className="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-4">
+                <div className="flex items-center">
+                    <span className="text-3xl mr-4 text-red-500">⚠️</span>
+                    <div>
+                        <h2 className="text-2xl font-bold uppercase tracking-wider">Australian Market Anomaly Detected</h2>
+                        <p className="text-gray-300">This practice exists nowhere else on Earth.</p>
+                    </div>
+                </div>
+                <button
+                    onClick={() => setVisible(false)}
+                    className="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring"
+                    aria-label="Dismiss"
+                >
+                    Dismiss
+                </button>
             </div>
-        </div>
-    </div>
-);
+        </motion.div>
+    );
+};
 
 export default AnomalyAlertBanner;
