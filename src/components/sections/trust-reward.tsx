@@ -72,74 +72,7 @@ export default function TrustRewardSection() {
             </p>
           </div>
           <div className="flex items-center justify-center" ref={ref}>
-            <Card className="w-full max-w-lg border-border/60 shadow-lg bg-card/80 p-4">
-              <CardHeader>
-                <CardTitle className="text-xl font-bold">The Trust-Reward Matrix</CardTitle>
-                <CardDescription className="text-sm">Trust vs. Income, Sized by Training Time</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ChartContainer config={chartConfig} className="w-full h-[300px]">
-                    <ScatterChart
-                        margin={{
-                            top: 20,
-                            right: 20,
-                            bottom: 40,
-                            left: 20,
-                        }}
-                    >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis
-                            dataKey="trust"
-                            type="number"
-                            name="Trust Rating"
-                            domain={[0, 100]}
-                            unit="%"
-                            label={{ value: "Public Trust Rating (%)", position: "insideBottom", offset: -25, style:{ fontSize: '10px' } }}
-                            tick={{fontSize: '10px'}}
-                        />
-                        <YAxis
-                            dataKey="income"
-                            type="number"
-                            name="Median Income"
-                            scale="log"
-                            domain={['dataMin', 'dataMax']}
-                            unit="k"
-                            label={{ value: "Median Income ($k)", angle: -90, position: "insideLeft", style:{ fontSize: '10px' } }}
-                            tick={{fontSize: '10px'}}
-                        />
-                        <ZAxis dataKey="training" type="number" range={[100, 1000]} name="training" unit=" hours" />
-                        <Tooltip 
-                            cursor={{ strokeDasharray: "3 3" }} 
-                            content={({ active, payload }) => {
-                                if (active && payload && payload.length) {
-                                    const data = payload[0].payload;
-                                    return (
-                                        <div className="bg-background/80 p-2 border border-border rounded-md shadow-lg text-sm">
-                                            <p className="font-bold text-base">{data.profession}</p>
-                                            <p>Trust: {data.trust}%</p>
-                                            <p>Income: ${data.income}k</p>
-                                            <p>Training: {data.training} hours</p>
-                                        </div>
-                                    )
-                                }
-                                return null;
-                            }}
-                        />
-                        <Legend content={<ChartLegendContent />} verticalAlign="bottom" height={50} />
-                        <AnimatedScatter
-                            data={chartData}
-                            shape="circle"
-                            style={spring}
-                        >
-                            {chartData.map((point) => (
-                                <Cell key={point.profession} fill={chartConfig[point.category as keyof typeof chartConfig]?.color || '#758D99'} />
-                            ))}
-                        </AnimatedScatter>
-                    </ScatterChart>
-                </ChartContainer>
-              </CardContent>
-               <p className="text-xs text-muted-foreground text-center pt-2">Sources: NAR; CoreLogic; The Economist calculations</p>
-            </Card>
+            
           </div>
         </div>
       </div>

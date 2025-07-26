@@ -192,7 +192,7 @@ export default function WhitePaperSection() {
                         </ArticleSection>
 
                         <ArticleSection overline="Part VI" title="The Digital Decimation Already Underway" hasDropCap>
-                            <p>The digital transformation is not a future threat but an ongoing reality, actively "eating the industry alive." This section provides concrete evidence of this market disruption.</p>
+                            <p>The digital transformation is not a future threat but an ongoing reality, actively "eating the industry alive." This section provides a concrete evidence of this market disruption.</p>
                              <ArticleTable
                                 caption="Digital Disruption Indicators in Australian Real Estate"
                                 headers={['Metric', 'Value']}
