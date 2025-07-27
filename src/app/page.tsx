@@ -55,16 +55,7 @@ export default function Home() {
         <TerminologyExplainer />
         <RiskMitigation />
         <div className="py-16 lg:py-24 bg-background">
-            <div className="container text-center">
-                 <div className="mt-8 border rounded-xl overflow-hidden">
-                    <ExploitationMachine />
-                </div>
-                <Button asChild size="lg" className="mt-8">
-                  <Link href="/audit">
-                      View Full-Screen Interactive Dashboard
-                  </Link>
-                </Button>
-            </div>
+             <ExploitationMachine />
         </div>
         <CtaSection />
         <DidYouMissCta />
