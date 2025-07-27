@@ -1,5 +1,6 @@
 import Header from '@/components/layout/header';
 import HeroSection from '@/components/sections/hero';
+import IntroParagraph from '@/components/sections/intro-paragraph';
 import TrustRewardSection from '@/components/sections/trust-reward';
 import EffortDistributionSection from '@/components/sections/effort-distribution';
 import VendorPays from '@/components/sections/vendor-pays';
@@ -23,6 +24,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
+        <IntroParagraph />
         <div id="data">
             <TrustRewardSection />
         </div>
