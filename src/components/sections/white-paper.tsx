@@ -150,10 +150,12 @@ export default function WhitePaperSection() {
                     <div className="space-y-16">
                         <ArticleSection overline="Executive Summary" title="The 2-Deal Paradox" hasDropCap>
                              <p>The modern agent enters the field hoping to help people. One year later they’ve closed two deals, burned through savings, and inherited a profession the public openly despises. This isn’t failure; it’s a predictable outcome of an oversaturated, misaligned system.</p>
+                             <PullQuote>But here's the thing about parasites: some of them prevent autoimmune diseases.</PullQuote>
                         </ArticleSection>
 
                         <ArticleSection overline="Part I" title="The Gatekeeper Myth Collapses" hasDropCap>
                             <p>Technology has shattered the old information monopoly that once justified the real estate agent's role as a gatekeeper. Consumers now have direct access to real-time data on comparable sales, suburb trends, and price guides through platforms like REA Group and Domain. This transparency has led to a fundamental question from the public: "Why am I paying a 2% commission for someone to simply open a door?" The commission structure has not adapted to this new reality, creating a significant value gap and fueling widespread resentment.</p>
+                             <PullQuote>The internet was supposed to kill travel agents, taxi drivers, and real estate agents. Two out of three isn't bad, unless you're the one still standing and wondering why.</PullQuote>
                         </ArticleSection>
                         
                          <ArticleSection overline="Part II" title="Social Media as Firing Squad" hasDropCap>
@@ -162,14 +164,17 @@ export default function WhitePaperSection() {
 
                         <ArticleSection overline="Part III" title="The Mental Health Crisis Nobody Talks About" hasDropCap>
                              <p>The glamorous facade of real estate conceals a harsh reality: an estimated 80% of new agents quit within their first 24 months. The profession is characterized by constant rejection, public stigma, and extreme financial instability. There are virtually no support structures in place to address the significant mental health challenges that arise from this high-pressure environment. Mental health has become the collateral damage of a system that prioritizes transactions over the well-being of its participants.</p>
+                             <PullQuote>The beautiful thing about overpaying for therapy is you can blame the therapist when it doesn't work.</PullQuote>
                         </ArticleSection>
                         
                         <ArticleSection overline="Part IV" title="REA’s Quiet Revolution" hasDropCap>
                             <p>While the traditional agency model has stagnated, REA Group has been quietly redefining the property marketplace. They have systematically built a suite of consumer-first tools that have shifted the balance of power, including predictive pricing models, real-time data APIs, direct buyer-seller messaging, and AI-assisted property searches. By focusing on data trust and transparency, REA has built a level of brand dominance that stands in stark contrast to the pervasive mistrust of individual agents. They have set a new standard for what consumers expect from a property transaction.</p>
+                            <PullQuote>Turns out you can't disrupt human nature with an app. Though watching Silicon Valley try is like watching atheists build churches - expensive, ironic, and ultimately missing the point.</PullQuote>
                         </ArticleSection>
 
                         <ArticleSection overline="Part V" title="The Commission Conundrum" hasDropCap>
                             <p>The standard 2-3% commission rate has remained stubbornly in place, despite significant technology-driven efficiency gains that have reduced the agent's workload. This creates misaligned incentives where agents profit from higher property prices rather than from delivering better client outcomes. The model fails to reward efficiency, negotiation skill, or superior service, instead tying compensation directly to market inflation. This is the core of the "commission conundrum" that consumers intuitively recognize as unfair.</p>
+                            <PullQuote>Numbers are like tattoos - they tell stories that seemed like a good idea at the time, until you look closer and realize they're permanent.</PullQuote>
                         </ArticleSection>
                         
                          <ArticleSection overline="Part VI" title="Oversupply & Attrition: The 80% Quit Rate" hasDropCap>
@@ -178,6 +183,7 @@ export default function WhitePaperSection() {
                         
                         <ArticleSection overline="Part VII" title="Trust Deficit and Kickback Culture" hasDropCap>
                              <p>The trust deficit is further deepened by a pervasive "kickback culture." Undisclosed referral fees paid to mortgage brokers, conveyancers, and building inspectors create a clear conflict of interest. This practice fosters the perception—and often, the reality—that the advice an agent provides is not impartial, but rather is influenced by financial incentives. Every undisclosed kickback erodes the foundation of trust between the agent and the consumer they are meant to represent.</p>
+                             <PullQuote>There's something profound about paying people you hate to protect you from yourself. It's like hiring your ex as a personal trainer - painful, expensive, but surprisingly effective.</PullQuote>
                         </ArticleSection>
 
                         <ArticleSection overline="Context" title="7 More Reasons Agents Cop Shrapnel: The Housing Crisis">
@@ -194,6 +200,7 @@ export default function WhitePaperSection() {
                                 <h4 className="font-bold text-xl text-gray-900 mb-2">🔥 Why This Matters</h4>
                                 <p className="text-base">Affordability is not temporary—homeownership is now structurally out of reach for most. The wealth gap widens as investors benefit from tax incentives, while the broader economy is dangerously exposed to an oversized housing market. Policy inertia in the face of these warnings only compounds the problem.</p>
                             </div>
+                             <PullQuote>Every civilization builds monuments to its fears. The Egyptians built pyramids. We built property contracts. Both required professional priests to navigate.</PullQuote>
                             <ArticleTable 
                                 caption="Cold, Hard Summary Table"
                                 headers={["Metric", "Current Value / Trend"]}
@@ -203,6 +210,7 @@ export default function WhitePaperSection() {
                         
                         <ArticleSection overline="Part VIII" title="The Consumer-Centric Future" hasDropCap>
                              <p>The success of REA Group's data-first, transparent, and user-driven model provides a clear blueprint for the future of the real estate industry. The inevitable evolution is a move towards a post-agent ecosystem where technology handles the logistics and data, while human professionals provide high-level strategy, negotiation, and advisory services. The industry must either embrace this consumer-centric future or risk complete irrelevance—not because people inherently hate agents, but because the traditional model is no longer necessary.</p>
+                             <PullQuote>Darwin never studied real estate agents, but he did write about species adapting to fill necessary niches. Sometimes those niches are psychological. Sometimes they cost $30,000.</PullQuote>
                         </ArticleSection>
 
                         <div className="bg-secondary rounded-xl p-8 md:p-12 mt-12 text-center text-secondary-foreground shadow-lg border border-border/40">
