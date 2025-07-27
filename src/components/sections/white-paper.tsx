@@ -155,6 +155,7 @@ export default function WhitePaperSection() {
 
                         <ArticleSection overline="Part I" title="The Gatekeeper Myth Collapses" hasDropCap>
                             <p>Technology has shattered the old information monopoly that once justified the real estate agent's role as a gatekeeper. Consumers now have direct access to real-time data on comparable sales, suburb trends, and price guides through platforms like REA Group and Domain. This transparency has led to a fundamental question from the public: "Why am I paying a 2% commission for someone to simply open a door?" The commission structure has not adapted to this new reality, creating a significant value gap and fueling widespread resentment.</p>
+                            <PullQuote>Why does everyone hate real estate agents? The same reason diabetics hate insulin — because needing something doesn't make you grateful for it.</PullQuote>
                              <PullQuote>The internet was supposed to kill travel agents, taxi drivers, and real estate agents. Two out of three isn't bad, unless you're the one still standing and wondering why.</PullQuote>
                         </ArticleSection>
                         
