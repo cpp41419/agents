@@ -1,4 +1,5 @@
 
+
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -160,18 +161,7 @@ export default function WhitePaperSection() {
                         
                         <ArticleSection overline="Part V" title="The Mathematical Impossibility" hasDropCap>
                              <p>The current commission structure in Australian real estate presents a perceived "mathematical impossibility" when juxtaposed against the actual value-added time contributed by agents. This section provides a granular breakdown, exposing the perceived overcharging.</p>
-                             <ArticleTable
-                                caption="Agent Value-Add vs. Effective Hourly Cost"
-                                headers={['Metric', 'Value']}
-                                rows={[
-                                    ['Average property search duration', '10 weeks'],
-                                    ['Agent involvement in search', '20%'],
-                                    ['Documentation handled by conveyancers', '75%'],
-                                    ['Negotiations requiring agent expertise', '1-2'],
-                                    ['Actual value-added time', '8-12 hours'],
-                                    ['Commission per hour of actual work', '$2,500-$3,750']
-                                ]}
-                            />
+                             <KeyMetrics />
                             <p>Consumers now perform an estimated 80% of the work themselves, from finding listings to arranging finance. Yet, they still pay 100% of traditional commissions. This is provocatively framed as a "subscription scam that makes gym memberships look honest," reinforcing the idea that information abundance has empowered consumers to self-serve, further eroding the traditional agent's value proposition.</p>
                              <p>While agents are no longer primary information brokers, their value has shifted to navigating the complexity of the transaction itself. The actual value, which consumers might not recognize, lies in preventing the "33% failure rate" and managing the "45+ potential failure points." The industry's challenge is to articulate and monetize this new value proposition – from information access to risk mitigation and complexity management.</p>
                         </ArticleSection>

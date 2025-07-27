@@ -1,15 +1,15 @@
 'use client';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { DollarSign, UserCheck, SearchX, AlertTriangle, Gauge, Hourglass } from 'lucide-react';
+import { DollarSign, UserCheck, SearchX, AlertTriangle, Gauge, Hourglass, Percent } from 'lucide-react';
 
 const metrics = [
-    { icon: <DollarSign className="h-8 w-8" />, value: '8.4', unit: 'B', label: 'Annual Commission Extraction', isCurrency: true },
-    { icon: <UserCheck className="h-8 w-8" />, value: 73, unit: '%', label: 'Homebuyers Questioning Agent Value' },
-    { icon: <SearchX className="h-8 w-8" />, value: 67, unit: '%', label: 'Buyers Finding Properties Independently' },
-    { icon: <AlertTriangle className="h-8 w-8" />, value: 33, unit: '%', label: 'Failure Rate for Unrepresented Buyers' },
-    { icon: <Gauge className="h-8 w-8" />, value: 2500, unit: '+', label: 'Agent Effective Hourly Rate (Actual Work)', isCurrency: true },
-    { icon: <Hourglass className="h-8 w-8" />, value: 2, unit: 'yrs', label: 'Projected Industry Transformation' },
+    { icon: <Hourglass className="h-8 w-8" />, value: '10', unit: ' wks', label: 'Avg. Property Search' },
+    { icon: <Percent className="h-8 w-8" />, value: 20, unit: '%', label: 'Agent Search Involvement' },
+    { icon: <UserCheck className="h-8 w-8" />, value: 75, unit: '%', label: 'Docs Handled by Conveyancers' },
+    { icon: <SearchX className="h-8 w-8" />, value: 2, unit: '', label: 'Negotiations Requiring Expertise' },
+    { icon: <Gauge className="h-8 w-8" />, value: 12, unit: ' hrs', label: 'Actual Value-Add Time' },
+    { icon: <DollarSign className="h-8 w-8" />, value: 3750, unit: '', label: 'Commission/Hour of Real Work', isCurrency: true },
 ];
 
 const AnimatedCounter = ({ to, isCurrency = false }: { to: number, isCurrency?: boolean }) => {
@@ -42,7 +42,7 @@ const MetricCard = ({ metric, index }: { metric: any, index: number }) => {
         >
             <div className="text-primary mx-auto mb-4 inline-block">{metric.icon}</div>
             <div className="leading-none">
-                <AnimatedCounter to={metric.value} isCurrency={metric.isCurrency}/>
+                <AnimatedCounter to={parseFloat(metric.value)} isCurrency={metric.isCurrency}/>
                 <span className="text-3xl md:text-4xl font-bold text-primary">{metric.unit}</span>
             </div>
             <p className="mt-2 text-sm text-slate-600 font-semibold">{metric.label}</p>
