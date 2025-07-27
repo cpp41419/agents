@@ -36,7 +36,7 @@ export default function DidYouMissCta() {
                 <div className="w-full flex justify-center">
                     <Link href="https://book.rite.io" target="_blank" rel="noopener noreferrer" className="block w-full max-w-xs">
                         <Image 
-                            src="https://book.rite.io/wp-content/uploads/2024/07/Book-Cover-1-1.png"
+                            src="https://book.rite.io/wp-content/uploads/2024/07/Book-Cover-3-3.png"
                             alt="Cover of the book Beautiful Paradox: AI"
                             width={400}
                             height={600}
