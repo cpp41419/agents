@@ -36,28 +36,14 @@ export default function Home() {
           </div>
         </div>
         <div className="py-16 lg:py-24 bg-background">
-            <div className="container text-center">
-               <h2 className="text-3xl md:text-5xl font-black text-primary-foreground tracking-tighter">PropTech Disruption Audit</h2>
-                <p className="text-lg md:text-xl mt-2 text-muted-foreground">An Interactive Analysis of the Australian Real Estate Industry</p>
-                <div className="mt-8 border rounded-xl overflow-hidden">
-                    <AuditDashboard />
-                </div>
-                <Button asChild size="lg" className="mt-8">
-                  <Link href="/audit">
-                      View Full-Screen Interactive Dashboard
-                  </Link>
-                </Button>
-            </div>
+             <ExploitationMachine />
         </div>
+        <CtaSection />
         <div id="truth-tribune">
             <WhitePaperSection />
         </div>
         <TerminologyExplainer />
         <RiskMitigation />
-        <div className="py-16 lg:py-24 bg-background">
-             <ExploitationMachine />
-        </div>
-        <CtaSection />
         <DidYouMissCta />
       </main>
       <Footer />
