@@ -20,6 +20,9 @@ export default function Header() {
           <Link href="/audit" className="font-medium text-muted-foreground transition-colors hover:text-foreground">
             Exploitation Audit
           </Link>
+          <Link href="/truths" className="font-medium text-muted-foreground transition-colors hover:text-foreground">
+            Agent Truths
+          </Link>
         </nav>
       </div>
     </header>
