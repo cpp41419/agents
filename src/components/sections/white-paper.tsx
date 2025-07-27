@@ -9,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { Rocket, FileText, Forward, TrendingUp, Search, Home, DollarSign, ArrowRight, BrainCircuit, Users, Bed, BarChart, ShieldAlert, Clock, Gauge, UserCheck, SearchX, AlertTriangle, Hourglass, Percent, Award, BookOpen, Clock3, MessageSquareWarning, BarChart3, UserMinus, ShieldQuestion, UserCheck2, Brain } from "lucide-react";
+import { Rocket, FileText, Forward, TrendingUp, Search, Home, DollarSign, ArrowRight, BrainCircuit, Users, Bed, BarChart, ShieldAlert, Clock, Gauge, UserCheck, SearchX, AlertTriangle, Hourglass, Percent, Award, BookOpen, Clock3, MessageSquareWarning, BarChart3, UserMinus, ShieldQuestion, UserCheck2, Brain, Flame, LineChart, Building, KeyRound, Target, AlertCircle } from "lucide-react";
 import AnomalyAlertBanner from "./anomaly-alert-banner";
 import ProfessionTrustChart from "./profession-trust-chart";
 import KeyMetrics from "./key-metrics";
@@ -80,6 +80,16 @@ const MetricCircle = ({ icon, value, label }: { icon: React.ReactNode, value: st
     </div>
 );
 
+const crisisData = [
+  { icon: <Flame className="h-6 w-6" />, text: "Only 14% of homes were affordable to median-income households in 2023-24, a sharp drop from 40% in 2022. For renters, the situation is dire, with 20.5% in severe financial stress." },
+  { icon: <LineChart className="h-6 w-6" />, text: "Sydney’s median home price is nearly 14.7 times the median income, making it the least affordable city in the world—surpassing Hong Kong." },
+  { icon: <AlertCircle className="h-6 w-6" />, text: "Australian households are dangerously leveraged, with housing wealth at 4.5 times GDP, far above other developed nations like the U.S. (1.7x)." },
+  { icon: <Building className="h-6 w-6" />, text: "The country faces a catastrophic housing shortfall, building only ~180,000 homes against a target of 240,000, which continues to fuel price spikes." },
+  { icon: <KeyRound className="h-6 w-6" />, text: "Rents surged 10.1% in 2022-23, outpacing inflation, while vacancy rates hover near a historic low of 1%, creating intense competition for tenants." },
+  { icon: <TrendingUp className="h-6 w-6" />, text: "Australians have suffered the steepest decline in real disposable income in the OECD, with an 8.0% drop, while the global average rose." },
+  { icon: <Target className="h-6 w-6" />, text: "Investor loans have grown from 28% to 37% of the market in five years, increasingly squeezing out first-home buyers." }
+];
+
 
 export default function WhitePaperSection() {
     const listItems = [
@@ -92,6 +102,18 @@ export default function WhitePaperSection() {
         { icon: <BarChart3 className="h-6 w-6 text-primary" />, title: 'Part VI', subtitle: 'Oversupply & Attrition' },
         { icon: <ShieldAlert className="h-6 w-6 text-primary" />, title: 'Part VII', subtitle: 'Trust Deficit and Kickback Culture' },
         { icon: <UserCheck2 className="h-6 w-6 text-primary" />, title: 'Part VIII', subtitle: 'The Consumer-Centric Future' },
+    ];
+
+    const crisisTableRows = [
+        ["Homes affordable to median income", "~14% in 2023–24 (down from ~40% in 2022)"],
+        ["Median price to income ratio", "~8× nationally; ~14.7× in Sydney"],
+        ["Median home value increased (5 yrs)", "+39% (~A$230K)"],
+        ["Rental price growth (2022–23)", "~10.1% (vs ~7% CPI)"],
+        ["Vacancy rate", "~1% (very tight rental market)"],
+        ["Household real disposable income change", "−8.0% (worst in OECD)"],
+        ["Housing stock value", "~A$11.3 trillion as of March 2025 (4.5× GDP)"],
+        ["New homes built vs target", "~180K vs 240K; shortfall ~60K annually"],
+        ["Investor share of new loans", "Rose from ~28% to ~37% over five years"]
     ];
 
     return (
@@ -158,6 +180,27 @@ export default function WhitePaperSection() {
                              <p>The trust deficit is further deepened by a pervasive "kickback culture." Undisclosed referral fees paid to mortgage brokers, conveyancers, and building inspectors create a clear conflict of interest. This practice fosters the perception—and often, the reality—that the advice an agent provides is not impartial, but rather is influenced by financial incentives. Every undisclosed kickback erodes the foundation of trust between the agent and the consumer they are meant to represent.</p>
                         </ArticleSection>
 
+                        <ArticleSection overline="Context" title="7 More Reasons Agents Cop Shrapnel: The Housing Crisis">
+                            <p>Agents often become the public face of a system facing immense pressure. Here are the brutal realities of the housing crisis that fuel public anger:</p>
+                            <ul className="space-y-4 not-prose">
+                                {crisisData.map((item, index) => (
+                                    <li key={index} className="flex items-start gap-4">
+                                        <div className="flex-shrink-0 text-primary pt-1">{item.icon}</div>
+                                        <span>{item.text}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                            <div className="mt-8 bg-slate-100 p-6 rounded-lg border border-slate-200">
+                                <h4 className="font-bold text-xl text-gray-900 mb-2">🔥 Why This Matters</h4>
+                                <p className="text-base">Affordability is not temporary—homeownership is now structurally out of reach for most. The wealth gap widens as investors benefit from tax incentives, while the broader economy is dangerously exposed to an oversized housing market. Policy inertia in the face of these warnings only compounds the problem.</p>
+                            </div>
+                            <ArticleTable 
+                                caption="Cold, Hard Summary Table"
+                                headers={["Metric", "Current Value / Trend"]}
+                                rows={crisisTableRows}
+                            />
+                        </ArticleSection>
+                        
                         <ArticleSection overline="Part VIII" title="The Consumer-Centric Future" hasDropCap>
                              <p>The success of REA Group's data-first, transparent, and user-driven model provides a clear blueprint for the future of the real estate industry. The inevitable evolution is a move towards a post-agent ecosystem where technology handles the logistics and data, while human professionals provide high-level strategy, negotiation, and advisory services. The industry must either embrace this consumer-centric future or risk complete irrelevance—not because people inherently hate agents, but because the traditional model is no longer necessary.</p>
                         </ArticleSection>
