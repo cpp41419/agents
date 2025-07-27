@@ -37,9 +37,12 @@ export default function Header() {
           <div className="mr-4 flex items-center">
             <Link href="/" className="mr-6 flex items-center space-x-2">
               <Home className="h-6 w-6 text-primary" />
-              <span className="font-bold sm:inline-block">
-                Property Deconstructed
-              </span>
+              <div>
+                <span className="font-bold sm:inline-block">
+                  Property Deconstructed
+                </span>
+                 <p className="text-xs text-muted-foreground hidden sm:block">Educating Tomorrow's Agents Today</p>
+              </div>
             </Link>
           </div>
           <nav className="hidden items-center gap-6 text-sm md:flex">

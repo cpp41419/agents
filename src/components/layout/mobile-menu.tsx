@@ -17,9 +17,12 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           <div className="flex justify-between items-center">
              <Link href="/" className="mr-6 flex items-center space-x-2" onClick={onClose}>
                 <Home className="h-6 w-6 text-primary" />
-                <span className="font-bold sm:inline-block">
-                Property Deconstructed
-                </span>
+                 <div>
+                    <span className="font-bold sm:inline-block">
+                    Property Deconstructed
+                    </span>
+                    <p className="text-xs text-muted-foreground">Educating Tomorrow's Agents Today</p>
+                </div>
             </Link>
             <button onClick={onClose} aria-label="Close menu" className="focus:outline-none">
               <XIcon />

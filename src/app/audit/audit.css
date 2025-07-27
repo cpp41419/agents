@@ -14,46 +14,41 @@ body {
 
 .header {
     text-align: center;
-    margin-bottom: 40px;
-    padding: 20px;
+    margin-bottom: 60px;
+    padding: 40px 20px;
+    background: linear-gradient(145deg, #1f1f3d, #1a1a2e);
+    border-radius: 20px;
+    border: 1px solid #334155;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .header h1 {
-    font-size: 2.8em;
+    font-size: 3.2em;
     font-weight: 900;
-    margin-bottom: 10px;
-    background: linear-gradient(45deg, #0077B6, #89CFF0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: pulse 3s infinite;
+    margin-bottom: 15px;
+    color: #E94560;
+    text-shadow: 0 2px 10px rgba(233, 69, 96, 0.3);
 }
 
 .header .subtitle {
-    font-size: 1.3em;
+    font-size: 1.4em;
     opacity: 0.9;
     max-width: 900px;
-    margin: 20px auto;
+    margin: 0 auto 20px auto;
     color: #89CFF0;
     font-weight: 600;
 }
 
-.problem-statement {
+.header .problem-statement {
     font-size: 1.1em;
     opacity: 0.8;
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
     color: #B0C4DE;
+    font-style: italic;
 }
 
-@keyframes pulse {
-    0%, 100% {
-        text-shadow: 0 0 5px #0077B6, 0 0 10px #0077B6, 0 0 15px #0077B6;
-    }
-    50% {
-        text-shadow: 0 0 10px #89CFF0, 0 0 20px #89CFF0, 0 0 30px #89CFF0;
-    }
-}
 
 .cards-container {
     display: grid;
