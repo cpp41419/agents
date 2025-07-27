@@ -180,11 +180,13 @@
   padding: 1.5rem;
   background-color: #ffffa5;
   font-family: 'Courier New', monospace;
-  font-weight: bold;
+  font-weight: 900;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   transform: rotate(-2deg);
   transition: transform 0.2s ease-in-out;
   border: none;
+  font-size: 1.2rem;
+  color: #E3120B;
 }
 
 .bonus-truth:hover {
@@ -196,9 +198,9 @@
     text-align: center;
     padding: 1.5rem 1rem;
     font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: white;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .clipboard-ad a {
@@ -206,10 +208,12 @@
     font-weight: 700;
     text-decoration: none;
     background-color: #0077B6;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 5px;
     transition: background-color 0.3s;
     margin-left: 0.5rem;
+    display: inline-block;
+    margin-top: 0.5rem;
 }
 
 .clipboard-ad a:hover {
