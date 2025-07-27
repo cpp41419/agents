@@ -40,7 +40,7 @@ export default function CtaSection() {
                         <div className="text-left p-4 rounded-lg bg-background/50">
                             <p className="text-sm font-semibold text-muted-foreground">CPP Fixed-Fee Plan</p>
                              <div className="h-8 mt-2 w-full bg-primary/20 rounded-full">
-                                <div className="h-8 w-1/4 bg-primary rounded-full" />
+                                <div className="h-8 w-[22.8%] bg-primary rounded-full" />
                             </div>
                              <p className="text-right font-bold text-primary text-xl mt-1">$8,000</p>
                         </div>
@@ -51,7 +51,7 @@ export default function CtaSection() {
         
         <div className="mx-auto w-full max-w-sm space-y-2">
            <Button type="submit" size="lg" className="w-full text-lg">
-              Learn More About CPP
+              Learn How to Become a Consumer-First Agent
             </Button>
         </div>
       </div>
