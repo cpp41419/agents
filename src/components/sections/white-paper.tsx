@@ -214,6 +214,15 @@ export default function WhitePaperSection() {
                              <PullQuote>Darwin never studied real estate agents, but he did write about species adapting to fill necessary niches. Sometimes those niches are psychological. Sometimes they cost $30,000.</PullQuote>
                         </ArticleSection>
 
+                        <div className="border-t border-slate-200 mt-16 pt-12">
+                            <h3 className="text-xl font-bold text-gray-900">About the Author</h3>
+                            <div className="mt-6 text-lg text-gray-700 space-y-4">
+                                <p>Simon Dodson is a digital transformation architect and strategist whose work spans media, real estate, and education reform. Over three decades, he has built platforms and campaigns for organizations as diverse as Griffith University, Fairfax Media, Southern Cross Media, and Diakrit, while advising hundreds of small businesses and global real estate networks.</p>
+                                <p>Creator of CPP41419.com.au, Australia’s first transparent platform for real estate licensing reform, Dodson combines deep technical execution (React/Next.js, Python automation) with strategic insight into regulated industries. His approach blends multi‑vector skills — content syndication, compliance frameworks, UX architecture, and growth strategy — to solve systemic industry inefficiencies.</p>
+                                <p>A former journalist and author of Beautiful Paradox: AI – The CEO’s Need‑to‑Know Playbook, he writes on the collision of technology, policy, and public trust. From corporate boardrooms to small‑scale operators, Dodson’s work reshapes how industries communicate, educate, and build credibility in the digital age.</p>
+                            </div>
+                        </div>
+
                         <div className="bg-secondary rounded-xl p-8 md:p-12 mt-12 text-center text-secondary-foreground shadow-lg border border-border/40">
                           <h3 className="text-4xl font-extrabold tracking-tight text-primary">Action: Become the Change</h3>
                           <p className="mt-4 text-xl text-muted-foreground">Ready to change real estate from the inside?</p>
