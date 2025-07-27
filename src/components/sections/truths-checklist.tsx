@@ -58,10 +58,10 @@ export default function TruthsChecklist() {
         <div className="clipboard-clip"></div>
         <div className="notebook-paper">
           <div className="lined-paper">
-            <h1 className="checklist-title">
-              🔥 AUSTRALIAN REAL ESTATE AGENT TRUTHS - NO BULLSHIT VERSION 🔥<br/>
-              <span className="text-base font-semibold">QLD/NSW EDITION:</span>
-            </h1>
+            <div className="checklist-title">
+                <h1 className="main-title">🔥 AUSTRALIAN REAL ESTATE AGENT TRUTHS - NO BULLSHIT VERSION 🔥</h1>
+                <p className="sub-title">QLD/NSW EDITION</p>
+            </div>
 
             {items.map((item, index) => (
               <div key={item.id} style={{'--animation-delay': `${index * 0.1}s`} as React.CSSProperties}>

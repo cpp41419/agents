@@ -80,15 +80,29 @@
 }
 
 .checklist-title {
-  font-family: 'Courier New', monospace;
-  font-weight: 900;
   text-align: center;
   padding: 1.5rem;
   background: #fdf5e6;
   border-bottom: 2px dashed #ddd;
   margin: -2rem -1.5rem 2rem -3.5rem;
-  color: #333;
 }
+
+.main-title {
+    font-family: 'Courier New', monospace;
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+    color: #333;
+}
+
+.sub-title {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
 
 .checklist-item {
   display: flex;
