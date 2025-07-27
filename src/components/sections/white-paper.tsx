@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -11,6 +12,7 @@ import { Rocket, FileText, Forward, TrendingUp, Search, Home, DollarSign, ArrowR
 import AnomalyAlertBanner from "./anomaly-alert-banner";
 import ProfessionTrustChart from "./profession-trust-chart";
 import KeyMetrics from "./key-metrics";
+import AuditDashboard from "./audit-dashboard";
 
 
 const ArticleSection = ({ title, overline, children, hasDropCap = false }: { title: string, overline: string, children: React.ReactNode, hasDropCap?: boolean }) => (
@@ -121,18 +123,14 @@ export default function WhitePaperSection() {
 
                         <ArticleSection overline="Part II" title="The Mirror We Hate Looking Into" hasDropCap>
                             <p>The widespread contempt for real estate agents conceals a deeper duality. What is often resented is not merely the agents themselves, but the mirror they hold up to Australia's property-obsessed culture. Real estate agents reflect the ugliest parts of our national psyche: greed commodified, shelter financialized, and community reduced to comparable sales.</p>
-                             <ArticleTable
-                                caption="Australia's Property Psychosis: Key Indicators"
-                                headers={['Metric', 'Value']}
-                                rows={[
-                                    ['Dinner party conversations involving property', '67%'],
-                                    ['Household wealth tied to residential property', '71%'],
-                                    ['First-home buyer average age (vs. 1981)', '38 (up from 25)'],
-                                    ['Properties owned by investors', '31%'],
-                                    ['Negative gearing tax benefits annually', '$11.7 billion'],
-                                    ['Young adults living with parents', '43%']
-                                ]}
-                            />
+                            <div className="my-8 grid grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-8 justify-items-center">
+                                <MetricCircle icon={<Users size={80} />} value="67%" label="Dinner party talk is property" />
+                                <MetricCircle icon={<Home size={80} />} value="71%" label="Household wealth in property" />
+                                <MetricCircle icon={<Clock size={80} />} value="38" label="First-home buyer avg. age" />
+                                <MetricCircle icon={<UserCheck size={80} />} value="31%" label="Properties owned by investors" />
+                                <MetricCircle icon={<DollarSign size={80} />} value="$11.7B" label="Negative gearing tax benefits" />
+                                <MetricCircle icon={<Users size={80} />} value="43%" label="Young adults at home" />
+                            </div>
                             <p>Agents capitalize on this cultural phenomenon, selling abstract concepts like "potential" and "street appeal" to individuals who have convinced themselves that debt is wealth. The public's animosity towards agents is often misdirected; it is a manifestation of frustration with the broader, dysfunctional property market itself. True transformation requires a cultural shift away from property as the primary vehicle for wealth accumulation and towards its fundamental purpose as shelter.</p>
                         </ArticleSection>
                         
@@ -152,18 +150,9 @@ export default function WhitePaperSection() {
 
                         <ArticleSection overline="Part IV" title="Case Study: Lessons from PropTech Disruption" hasDropCap>
                              <p>Compass's spectacular failure serves as a crucial cautionary tale for the PropTech sector. The company "speedran the entire tech startup playbook from 'disruption' to 'bankruptcy'," demonstrating that simply throwing vast capital and advanced technology at a complex human problem is insufficient for true market transformation.</p>
-                             <ArticleTable
-                                caption="Compass: A Case Study in PropTech Miscalculation"
-                                headers={['Metric', 'Value']}
-                                rows={[
-                                    ['Total capital raised', '$1.6 billion'],
-                                    ['Annual losses (2022)', '$494 million'],
-                                    ['Agent retention rate (industry: 64%)', '68%'],
-                                    ['Technology adoption by agents', '<30%'],
-                                    ['Stock price decline from IPO', '-84%'],
-                                    ['CEO compensation during losses', '$24.8 million']
-                                ]}
-                            />
+                             <div className="bg-slate-50 border border-slate-200 rounded-lg my-8 p-6">
+                                <AuditDashboard />
+                             </div>
                             <p>Compass's failure stemmed from critical misdiagnoses. They saw a "technology problem where a trust problem existed," built "tools for transactions when people needed therapy for property PTSD," and optimized for "efficiency in an industry that runs on anxiety."</p>
                             <PullQuote>You can't disrupt human nature with an app.</PullQuote>
                             <p>Despite raising $1.6 billion, Compass experienced low technology adoption by agents and a fundamental misunderstanding of the market's underlying dynamics. Technology alone cannot solve the deep-seated issues in real estate because the industry is fundamentally driven by complex human emotions, relationships, and a deep-seated "trust deficit."</p>
