@@ -19,11 +19,11 @@ export default function DidYouMissCta() {
                     <CardContent>
                         <div className="prose-invert text-base prose-p:text-muted-foreground">
                             <p>
-                                This is where the text from your LinkedIn post would go. Let me know what you'd like it to say!
+                                The real estate industry is on the brink of a massive transformation. Our latest analysis breaks down why the traditional agent model is failing and what the future holds for consumers and professionals alike. We explore the tech, the trends, and the truths you need to know.
                             </p>
                         </div>
                         <Button size="lg" className="mt-6">
-                            Read More <ArrowRight className="ml-2" />
+                            Read the Full Analysis <ArrowRight className="ml-2" />
                         </Button>
                     </CardContent>
                 </div>
