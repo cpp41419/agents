@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -12,9 +13,12 @@ export default function HeroSection() {
         <p className="mt-6 text-lg sm:text-xl text-foreground/80 max-w-2xl mx-auto">
           In a world of instant information, the traditional real estate model is facing a crisis of confidence. Let's deconstruct the value proposition.
         </p>
-        <div className="mt-8 flex justify-center">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-            Explore the Data
+        <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
+            <Link href="#data">Explore the Data</Link>
+          </Button>
+          <Button size="lg" variant="outline" className="bg-transparent hover:bg-white/10" asChild>
+            <Link href="#truth-tribune">The Full Story Series</Link>
           </Button>
         </div>
       </div>

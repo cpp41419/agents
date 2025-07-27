@@ -23,7 +23,9 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
-        <TrustRewardSection />
+        <div id="data">
+            <TrustRewardSection />
+        </div>
         <EffortDistributionSection />
         <VendorPays />
         <div className="bg-white py-16 lg:py-24">
@@ -45,7 +47,9 @@ export default function Home() {
                 </Button>
             </div>
         </div>
-        <WhitePaperSection />
+        <div id="truth-tribune">
+            <WhitePaperSection />
+        </div>
         <TerminologyExplainer />
         <RiskMitigation />
         <div className="py-16 lg:py-24 bg-background">
