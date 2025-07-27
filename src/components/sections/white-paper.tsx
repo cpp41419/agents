@@ -237,18 +237,6 @@ export default function WhitePaperSection() {
                                 <MetricCircle icon={<Clock size={80} />} value="3-6mo" label="Post-purchase anxiety duration" />
                             </div>
                              <p>Every Saturday morning, Australians gather to watch their neighbors compete for shelter like it's a reality TV show where the prize is crippling debt. This "auction theatre" highlights the intense pressure and competitive environment.</p>
-                             <ArticleTable
-                                caption="Auction Dynamics and Potential Manipulation Tactics"
-                                headers={['Metric', 'Value']}
-                                rows={[
-                                    ['Vendor bids', 'Legal gaslighting'],
-                                    ['Underquoting percentage', '73%'],
-                                    ['Emotional manipulation index', '9.2/10'],
-                                    ['Phantom bidders', 'Unmeasurable but universal'],
-                                    ['Price achievement vs. private treaty', '+7-10%'],
-                                    ['Post-auction regret percentage', '43%']
-                                ]}
-                            />
                              <p>The section concludes by reframing the commission as payment for "Midnight anxiety calls answered," and "Professional scapegoat services." This framing underscores the agent's role as an emotional and psychological buffer in a highly stressful process, a form of "therapy" that consumers implicitly purchase.</p>
                         </ArticleSection>
 
