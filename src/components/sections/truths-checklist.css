@@ -177,13 +177,20 @@
 
 .bonus-truth {
   margin-top: 2rem;
-  padding: 1rem;
-  background-color: #fffbe6;
-  border: 2px dashed #fcd34d;
-  border-radius: 5px;
+  padding: 1.5rem;
+  background-color: #ffffa5;
   font-family: 'Courier New', monospace;
   font-weight: bold;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  transform: rotate(-2deg);
+  transition: transform 0.2s ease-in-out;
+  border: none;
 }
+
+.bonus-truth:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
 
 .clipboard-ad {
     text-align: center;
