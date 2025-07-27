@@ -15,6 +15,7 @@ import Link from 'next/link';
 import DidYouMissCta from '@/components/sections/did-you-miss-cta';
 import NewPlayersSection from '@/components/sections/new-players';
 import ExploitationMachine from '@/components/sections/exploitation-machine';
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
   return (
@@ -37,9 +38,11 @@ export default function Home() {
                 <div className="mt-8 border rounded-xl overflow-hidden">
                     <AuditDashboard />
                 </div>
-                <Link href="/audit" className="inline-block mt-8 text-primary hover:underline">
-                    View Full-Screen Interactive Dashboard
-                </Link>
+                <Button asChild size="lg" className="mt-8">
+                  <Link href="/audit">
+                      View Full-Screen Interactive Dashboard
+                  </Link>
+                </Button>
             </div>
         </div>
         <WhitePaperSection />
@@ -50,9 +53,11 @@ export default function Home() {
                  <div className="mt-8 border rounded-xl overflow-hidden">
                     <ExploitationMachine />
                 </div>
-                <Link href="/audit" className="inline-block mt-8 text-primary hover:underline">
-                    View Full-Screen Interactive Dashboard
-                </Link>
+                <Button asChild size="lg" className="mt-8">
+                  <Link href="/audit">
+                      View Full-Screen Interactive Dashboard
+                  </Link>
+                </Button>
             </div>
         </div>
         <CtaSection />
