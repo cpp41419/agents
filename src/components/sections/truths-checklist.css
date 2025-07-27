@@ -184,3 +184,22 @@
   font-family: 'Courier New', monospace;
   font-weight: bold;
 }
+
+.clipboard-ad {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.clipboard-ad a {
+    color: #f0e68c;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.clipboard-ad a:hover {
+    text-decoration: underline;
+}

@@ -1,3 +1,4 @@
+
 'use client';
 import { useState } from 'react';
 import { Check } from 'lucide-react';
@@ -89,6 +90,9 @@ export default function TruthsChecklist() {
                 Want specific state regulations or ways to leverage these laws? Let's make sure you're not getting screwed Down Under. #AussieRealEstate #PropertyTruth
             </p>
           </div>
+        </div>
+        <div className="clipboard-ad">
+            Ready to become a modern property professional? Visit <a href="https://cpp41419.com.au" target="_blank" rel="noopener noreferrer">CPP41419.com.au</a>
         </div>
       </div>
     </div>
