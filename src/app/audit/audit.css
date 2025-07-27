@@ -63,7 +63,6 @@ body {
     border-radius: 20px;
     border: 1px solid #334155;
     padding: 30px;
-    cursor: pointer;
     transition: all 0.3s ease-out;
     position: relative;
     overflow: hidden;
