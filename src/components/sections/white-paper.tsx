@@ -220,6 +220,16 @@ export default function WhitePaperSection() {
                             </Button>
                           </div>
                         </div>
+
+                        <div className="mt-12 text-center border-t border-dashed border-slate-300 pt-10">
+                            <h4 className="text-xl font-bold text-gray-900">Stay Tuned...</h4>
+                            <p className="mt-2 text-gray-600">
+                                Tomorrow: <span className="font-semibold text-primary">Why REA Matters So Much Right Now</span>
+                            </p>
+                            <p className="mt-1 text-gray-600">
+                                Coming Soon: <span className="font-semibold text-primary">7 More Reasons Why People Hate Real Estate Agents</span>
+                            </p>
+                        </div>
                     </div>
                 </article>
             </div>
