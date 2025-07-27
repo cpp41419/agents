@@ -7,7 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { Rocket, FileText, Forward, TrendingUp, Search, Home, DollarSign, ArrowRight, BrainCircuit, Users, Bed, BarChart, ShieldAlert, Clock, Gauge, UserCheck, SearchX, AlertTriangle, Hourglass } from "lucide-react";
+import { Rocket, FileText, Forward, TrendingUp, Search, Home, DollarSign, ArrowRight, BrainCircuit, Users, Bed, BarChart, ShieldAlert, Clock, Gauge, UserCheck, SearchX, AlertTriangle, Hourglass, Percent, Award, BookOpen, Clock3 } from "lucide-react";
 import AnomalyAlertBanner from "./anomaly-alert-banner";
 import ProfessionTrustChart from "./profession-trust-chart";
 import KeyMetrics from "./key-metrics";
@@ -108,17 +108,13 @@ export default function WhitePaperSection() {
                             </PullQuote>
                              <ProfessionTrustChart />
                             <p>The financial mechanics fueling public resentment are clear. An average commission of $84,000 on a $1.4M Sydney home is extracted for an estimated 40-60 hours of actual work per transaction. This translates to an effective hourly rate of $1,400-$2,100. This staggering figure is juxtaposed against a minimal 0.5 years of training required and a dismal 7% public trust rating.</p>
-                            <ArticleTable
-                                caption="The Mathematics of Delusion: Cost vs. Perceived Value"
-                                headers={['Metric', 'Value']}
-                                rows={[
-                                    ['Average commission on $1.4M Sydney home', '$84,000'],
-                                    ['Hours of actual work per transaction', '40-60'],
-                                    ['Effective hourly rate', '$1,400-$2,100'],
-                                    ['Years of training required', '0.5'],
-                                    ['Public trust rating', '7%']
-                                ]}
-                            />
+                            <div className="my-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <ValuePropCard icon={<Award className="h-8 w-8" />} value="$84,000" label="Avg. commission on $1.4M home" />
+                                <ValuePropCard icon={<Clock3 className="h-8 w-8" />} value="40-60" label="Hours of actual work" />
+                                <ValuePropCard icon={<DollarSign className="h-8 w-8" />} value="$1,400+" label="Effective hourly rate" />
+                                <ValuePropCard icon={<BookOpen className="h-8 w-8" />} value="0.5 yrs" label="Years of training required" />
+                                <ValuePropCard icon={<Percent className="h-8 w-8" />} value="7%" label="Public trust rating" />
+                            </div>
                             <p>The low barrier to entry for real estate agents is a critical factor contributing to public distrust. The CPP41419 Certificate IV in Real Estate Practice is the standard entry point, typically taking 3-12 months and costing $2,000-$8,000. This relatively low investment in time and money, compared to other professions with significantly higher trust ratings fuels the perception that agents are overpaid for easily acquired skills.</p>
                             <AnomalyAlertBanner />
                         </ArticleSection>
