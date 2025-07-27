@@ -9,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { Rocket, FileText, Forward, TrendingUp, Search, Home, DollarSign, ArrowRight, BrainCircuit, Users, Bed, BarChart, ShieldAlert, Clock, Gauge, UserCheck, SearchX, AlertTriangle, Hourglass, Percent, Award, BookOpen, Clock3, MessageSquareWarning, BarChart3, UserMinus, ShieldQuestion, UserCheck2, Brain, Flame, LineChart, Building, KeyRound, Target, AlertCircle } from "lucide-react";
+import { Rocket, FileText, Forward, TrendingUp, Search, Home, DollarSign, ArrowRight, BrainCircuit, Users, Bed, BarChart, ShieldAlert, Clock, Gauge, UserCheck, SearchX, AlertTriangle, Hourglass, Percent, Award, BookOpen, Clock3, MessageSquareWarning, BarChart3, UserMinus, ShieldQuestion, UserCheck2, Brain, Flame, LineChart, Building, KeyRound, Target, AlertCircle, CalendarClock } from "lucide-react";
 import AnomalyAlertBanner from "./anomaly-alert-banner";
 import ProfessionTrustChart from "./profession-trust-chart";
 import KeyMetrics from "./key-metrics";
@@ -230,14 +230,21 @@ export default function WhitePaperSection() {
                           </div>
                         </div>
 
-                        <div className="mt-16 bg-primary/10 p-8 md:p-12 rounded-xl border-2 border-dashed border-primary/30 text-center">
-                            <h3 className="text-base font-semibold tracking-wider text-primary uppercase">Coming Next</h3>
-                            <p className="mt-4 text-3xl md:text-4xl font-black text-gray-900">
-                                Tomorrow: Why REA Matters So Much Right Now
+                        <div className="mt-16 relative overflow-hidden rounded-2xl p-8 md:p-12 text-center bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-2xl">
+                          <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+                          <div className="absolute -bottom-16 -left-10 w-48 h-48 bg-accent/20 rounded-full blur-3xl animate-pulse [animation-delay:3s]"></div>
+                          <div className="relative">
+                            <div className="inline-block bg-primary/10 text-primary font-semibold px-4 py-1 rounded-full text-sm mb-4">
+                              <CalendarClock className="inline -mt-1 mr-2 h-4 w-4" />
+                              Coming Soon
+                            </div>
+                            <h3 className="text-3xl md:text-5xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
+                                The Next Analysis Drops Tomorrow
+                            </h3>
+                            <p className="mt-4 text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
+                                Why REA Group's dominance is the most important story in Australian real estate right now, and what it means for the future of the agent.
                             </p>
-                            <p className="mt-2 text-lg text-gray-600">
-                                Plus: 7 More Reasons Why People Hate Real Estate Agents
-                            </p>
+                          </div>
                         </div>
                     </div>
                 </article>
