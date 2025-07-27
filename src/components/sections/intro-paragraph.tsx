@@ -16,7 +16,7 @@ export default function IntroParagraph() {
           </div>
         </div>
         <div className="max-w-4xl mx-auto mt-12 prose prose-lg prose-invert text-left">
-          <h3>The Question That Answers Itself</h3>
+          <h4 className="text-xl font-bold text-primary">The Question That Answers Itself</h4>
           <p>
             Why does everyone hate real estate agents? The same reason diabetics hate insulin — because needing something doesn't make you grateful for it.
           </p>
