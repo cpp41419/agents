@@ -13,7 +13,7 @@ import CtaSection from '@/components/sections/cta';
 import Footer from '@/components/layout/footer';
 import AuditDashboard from '@/components/sections/audit-dashboard';
 import Link from 'next/link';
-import DidYouMissCta from '@/components/sections/did-you-miss-cta';
+import BookPromoCta from '@/components/sections/book-promo-cta';
 import NewPlayersSection from '@/components/sections/new-players';
 import { Button } from '@/components/ui/button';
 
@@ -45,7 +45,7 @@ export default function Home() {
         </div>
         <TerminologyExplainer />
         <RiskMitigation />
-        <DidYouMissCta />
+        <BookPromoCta />
       </main>
       <Footer />
     </div>
