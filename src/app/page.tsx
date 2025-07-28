@@ -15,7 +15,6 @@ import AuditDashboard from '@/components/sections/audit-dashboard';
 import Link from 'next/link';
 import DidYouMissCta from '@/components/sections/did-you-miss-cta';
 import NewPlayersSection from '@/components/sections/new-players';
-import ExploitationMachine from '@/components/sections/exploitation-machine';
 import { Button } from '@/components/ui/button';
 
 export default function Home() {
@@ -35,8 +34,10 @@ export default function Home() {
             <NewPlayersSection />
           </div>
         </div>
-        <div className="py-16 lg:py-24 bg-background">
-             <ExploitationMachine />
+        <div className="py-16 lg:py-24 bg-secondary text-secondary-foreground">
+             <div className="container">
+                <AuditDashboard />
+             </div>
         </div>
         <CtaSection />
         <div id="truth-tribune">
