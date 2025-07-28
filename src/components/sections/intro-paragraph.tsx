@@ -20,7 +20,7 @@ export default function IntroParagraph() {
           <p className="text-2xl font-bold my-8">
             Why does everyone hate real estate agents? The same reason diabetics hate insulin — because needing something doesn't make you grateful for it.
           </p>
-          <p>
+          <p className="text-2xl font-bold my-8">
             Last week, a Sydney real estate agent made $84,000 for opening six doors and lying about the kitchen renovation. That's more than a heart surgeon makes for saving actual lives. The difference? The surgeon needed 12 years of training. The agent needed six months and a suit from Lowes.
           </p>
           <p>
